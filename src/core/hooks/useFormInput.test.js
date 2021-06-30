@@ -2,13 +2,13 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import useFormInput from './useFormInput';
 
 describe('Testing useFormInput custom hook', () => {
-	test('Should have "teste" as default value', () => {
+	test('Should have "test" as initial value', () => {
 		const { result } = renderHook(() => useFormInput('test'));
 
 		expect(result.current.value).toBe('test');
 	});
 
-	test('Should change value to "testando"', () => {
+	test('Should change value to "onchange"', () => {
 		const { result } = renderHook(() => useFormInput('test'));
 		const e = {
 			target: {
@@ -41,7 +41,7 @@ describe('Testing useFormInput custom hook', () => {
 		expect(typeof result.current.onChange).toBe('function');
 	});
 
-	test('The value must start undefined, but become defined on change', () => {
+	test('Should value start undefined, but become defined on change', () => {
 		const { result } = renderHook(() => useFormInput());
 		const e = {
 			target: {
