@@ -17,7 +17,7 @@ function Login() {
 				s={12} 
 				m={6}
 				l={7} >
-				<AppNameH1>Sckan</AppNameH1>
+				<AppNameH1 data-testid="app-name">Sckan</AppNameH1>
 			</LeftMainCol>
 
 			<RightMainCol id='right-main-col'
@@ -35,6 +35,7 @@ function Login() {
 						<CardPanel id='login-card'>
 							<TextInput {...userIndentification}
 								id='user-identification-input'
+								data-testid='user-identification-input'
 								label='User identification'
 								placeholder='Type your email or your identification'
 								s={12}
@@ -42,6 +43,7 @@ function Login() {
 
 							<TextInput {...userPassword}
 								id='user-password-input'
+								data-testid='user-password-input'
 								label='Password'
 								placeholder='Type your password'
 								s={12}
@@ -49,6 +51,7 @@ function Login() {
 								validate />
 								
 							<SignInButton id='login-button'
+								data-testid='login-button'
 								large
 								waves="light">
 									Sign-in
