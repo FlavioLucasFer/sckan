@@ -1,13 +1,20 @@
 import React from 'react';
 import { Row, Col, CardPanel, TextInput } from 'react-materialize';
+import { useHistory } from 'react-router-dom';
 
 import useFormInput from 'core/hooks/useFormInput';
+import { TASK_ROUTE } from 'core/utils/routes';
 import { MainRow } from 'core/components/StyledComponents';
 import { AppNameH1, LeftMainCol, RightMainCol, SignInButton } from './components/StyledComponents';
 
 function Login() {
 	const userIndentification = useFormInput();
 	const userPassword = useFormInput();
+  const { push } = useHistory();
+
+  function handleSignInClick() {
+    push(TASK_ROUTE);
+  }
 
 	return (
 		<MainRow id='main-row'
@@ -53,7 +60,8 @@ function Login() {
 							<SignInButton id='login-button'
 								data-testid='login-button'
 								large
-								waves="light">
+								waves="light"
+                onClick={handleSignInClick} >
 									Sign-in
 							</SignInButton>
 						</CardPanel>
