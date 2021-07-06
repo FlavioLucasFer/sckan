@@ -1,9 +1,9 @@
 const LOGIN_ROUTE = '/';
-const COMPANY_ROUTE = '/company';
-const PROJECT_ROUTE = '/project';
-const SPRINT_ROUTE = '/sprint';
-const TASK_ROUTE = '/task';
-const USER_ROUTE = '/user';
+const COMPANY_ROUTE = '/companies';
+const PROJECT_ROUTE = '/projects';
+const SPRINT_ROUTE = '/sprints';
+const TASK_ROUTE = '/tasks';
+const USER_ROUTE = '/users';
 
 export {
   LOGIN_ROUTE,

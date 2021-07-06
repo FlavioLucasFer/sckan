@@ -2,20 +2,45 @@ html, body, #root {
   height: 100%;
 }
 
-.input-field>label {
-  font-weight: bold;
-}
-
 body {
-  margin: 0;
+	margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+	'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+	margin: 0 !important;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+	monospace;
+}
+
+.input-field>label {
+	font-weight: bold;
+}
+
+#side-navbar {
+	-webkit-transform: none !important;
+	transform: none !important;
+	overflow-y: hidden !important;
+}
+
+.sidenav-trigger {
+	display: inline-block !important;
+	height: 50px !important;
+	line-height: 50px !important;
+}
+
+#mobile-nav {
+	overflow-y: hidden !important;
+}
+
+#open-menu-icon {
+	height: 50px !important;
+	line-height: 50px !important;
 }

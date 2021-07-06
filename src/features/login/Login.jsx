@@ -57,8 +57,8 @@ function Login() {
 								password
 								validate />
 								
-							<SignInButton id='login-button'
-								data-testid='login-button'
+							<SignInButton id='signin-button'
+								data-testid='signin-button'
 								large
 								waves="light"
                 onClick={handleSignInClick} >
