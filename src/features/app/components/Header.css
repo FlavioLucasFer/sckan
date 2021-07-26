@@ -1,0 +1,14 @@
+.nav-wrapper {
+	line-height: 50px !important;
+}
+
+.nav-ul>li>i {
+	cursor: pointer;
+	line-height: 50px !important;
+	margin: 0px 10px;
+}
+
+.brand-logo {
+	font-weight: bold;
+	cursor: pointer;
+}
