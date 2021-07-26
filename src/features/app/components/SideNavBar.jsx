@@ -1,80 +1,94 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { SideNav, SideNavItem, Icon } from 'react-materialize';
+import './SideNavBar.css';
+import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { 
 	COMPANY_ROUTE, 
-	LOGIN_ROUTE, 
+	HOME_ROUTE,  
 	PROJECT_ROUTE, 
 	SPRINT_ROUTE, 
 	TASK_ROUTE, 
 	USER_ROUTE,
 } from 'core/utils/routes';
 
-import { AppNameDiv, AppNameH1 } from './StyledComponents';
+import Icon from 'core/components/Icon';
+import LogOutModal, { id as logOutModalId } from '../modals/LogOutModal';
 
 function SideNavBar() {
 	const { push } = useHistory();
+	const { pathname } = useLocation();
+
+	function renderLi(label, icon, route, testeid, first=false) {
+		const [iconColor, setIconColor] = useState('white-text');
+		const isCurrentRoute = pathname === route;
+
+		function handleMouseIn() {
+			setIconColor('grey-text text-lighten-1');
+		}
+
+		function handleMouseOut() {
+			setIconColor('white-text');
+		}
+
+		function handleClick() {
+			if (route) 
+				push(route);
+		}
+
+		return (
+			<li data-testid={testeid} 
+				className={`
+					btn-flat 
+					btn-large 
+					waves-effect 
+					waves-light 
+					sidenav-li 
+					${isCurrentRoute ? 'teal' : ''}
+				`}
+				onClick={handleClick}
+				onMouseEnter={handleMouseIn}
+				onMouseLeave={handleMouseOut}
+				style={{ marginTop: first ? 0 : '2.5px' }}>
+				<Icon className="left"
+					type="round"
+					color={isCurrentRoute ? 'teal-text text-accent-1' : 'grey-text text-darken-3'}>
+						{icon}
+				</Icon>
+
+				<span className="sidenav-span">
+					{label}
+				</span>
+
+				<Icon className="right li-icon"
+					type="round"
+					color={isCurrentRoute ? 'teal-text text-lighten-3' : iconColor}>
+						{icon}
+				</Icon>
+			</li>
+		);
+	}
+
+	function renderDivider() {
+		return (
+			<li className="divider"></li>
+		);
+	}
 
 	return (
-		<SideNav id='side-navbar'
-			data-testid='side-navbar'>
-			<AppNameDiv>
-				<AppNameH1>
-					Sckan
-				</AppNameH1>
-			</AppNameDiv>
+		<ul id="sidenav" data-testid="sidenav">
+			{renderLi('Home', 'home', HOME_ROUTE, 'home-sidenav-item', true)}
+			{renderLi('Users', 'manage_accounts', USER_ROUTE, 'users-sidenav-item')}
+			{renderLi('Companies', 'business', COMPANY_ROUTE, 'companies-sidenav-item')}
+			{renderLi('Tasks', 'task', TASK_ROUTE, 'tasks-sidenav-item')}
+			{renderLi('Sprints', 'wysiwyg', SPRINT_ROUTE, 'sprints-sidenav-item')}
+			{renderLi('Projects', 'source', PROJECT_ROUTE, 'projects-sidenav-item')}
+			{renderDivider()}
+			<a className="modal-trigger" href={`#${logOutModalId}`}>
+				{renderLi('Log-out', 'logout', null, 'logout-sidenav-item')}
+			</a>
 			
-			<SideNavItem waves
-				data-testid='users-sidenav-item'
-				href={USER_ROUTE}
-				icon={<Icon small>manage_accounts</Icon>}
-				onClick={() => push(USER_ROUTE)}>
-				Users
-			</SideNavItem>
-
-			<SideNavItem waves
-				data-testid='companies-sidenav-item'
-				href={COMPANY_ROUTE}
-				icon={<Icon small>business</Icon>}
-				onClick={() => push(COMPANY_ROUTE)}>
-				Companies
-			</SideNavItem>
-
-			<SideNavItem waves
-				data-testid='tasks-sidenav-item'
-				href={TASK_ROUTE}
-				icon={<Icon small>task</Icon>}
-				onClick={() => push(TASK_ROUTE)}>
-				Tasks
-			</SideNavItem>
-
-			<SideNavItem waves
-				data-testid='sprints-sidenav-item'
-				href={SPRINT_ROUTE}
-				icon={<Icon small>wysiwyg</Icon>}
-				onClick={() => push(SPRINT_ROUTE)}>
-				Sprints
-			</SideNavItem>
-
-			<SideNavItem waves
-				data-testid='projects-sidenav-item'
-				href={PROJECT_ROUTE}
-				icon={<Icon small>source</Icon>}
-				onClick={() => push(PROJECT_ROUTE)}>
-				Projects
-			</SideNavItem>
-
-			<SideNavItem divider />
-
-			<SideNavItem waves
-				data-testid='logout-sidenav-item'
-				href={LOGIN_ROUTE}
-				icon={<Icon small>logout</Icon>}
-				onClick={() => push(LOGIN_ROUTE)}>
-				Log-out
-			</SideNavItem>
-		</SideNav>
+			<LogOutModal />
+		</ul>
 	);
 }
 

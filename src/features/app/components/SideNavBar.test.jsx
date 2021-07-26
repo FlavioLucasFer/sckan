@@ -7,8 +7,8 @@ import { createMemoryHistory } from 'history';
 import userEvent from '@testing-library/user-event'
 
 import { 
+	HOME_ROUTE, 
 	COMPANY_ROUTE, 
-	LOGIN_ROUTE, 
 	PROJECT_ROUTE, 
 	SPRINT_ROUTE, 
 	TASK_ROUTE, 
@@ -17,57 +17,45 @@ import {
 
 import SideNavBar from './SideNavBar';
 
+function renderSideNavBar() {
+	const history = createMemoryHistory();
+
+	render(
+		<Router history={history}>
+			<SideNavBar />
+		</Router>
+	);
+
+	return history;
+}
+
 describe('SideNavBar component render tests', () => {
 	test('Should render SideNavBar', () => {
-		const history = createMemoryHistory();
+		renderSideNavBar();
 
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
-
-		const sideNavbar = screen.getByTestId('side-navbar');
+		const sideNavbar = screen.getByTestId('sidenav');
 
 		expect(sideNavbar).toBeInTheDocument();
 	});
 
-	test('Should render "Sckan" text on H1 tag', () => {
-		const history = createMemoryHistory();
+	test('Should render home SideNavItem', () => {
+		renderSideNavBar();
 
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		const homeSideNavItem = screen.getByTestId('home-sidenav-item');
 
-		const appName = screen.getByText('Sckan');
-
-		expect(appName).toBeInTheDocument();
-	});
+		expect(homeSideNavItem).toBeInTheDocument();
+	})
 
 	test('Should render Users SideNavItem', () => {
-		const history = createMemoryHistory();
+		renderSideNavBar();
 
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		const usersSideNavItem = screen.getByTestId('users-sidenav-item');
 
-		const usersNavNavItem = screen.getByTestId('users-sidenav-item');
-
-		expect(usersNavNavItem).toBeInTheDocument();
+		expect(usersSideNavItem).toBeInTheDocument();
 	});
 
 	test('Should render Companies SideNavItem', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		renderSideNavBar();
 
 		const companiesSideNavItem = screen.getByTestId('companies-sidenav-item');
 
@@ -75,13 +63,7 @@ describe('SideNavBar component render tests', () => {
 	});
 
 	test('Should render Tasks SideNavItem', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		renderSideNavBar();
 
 		const tasksSideNavItem = screen.getByTestId('tasks-sidenav-item');
 
@@ -89,13 +71,7 @@ describe('SideNavBar component render tests', () => {
 	});
 
 	test('Should render Sprints SideNavItem', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		renderSideNavBar();
 
 		const sprintsSideNavItem = screen.getByTestId('sprints-sidenav-item');
 
@@ -103,13 +79,7 @@ describe('SideNavBar component render tests', () => {
 	});
 
 	test('Should render Projects SideNavItem', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		renderSideNavBar();
 
 		const projectsSideNavItem = screen.getByTestId('projects-sidenav-item');
 
@@ -117,13 +87,7 @@ describe('SideNavBar component render tests', () => {
 	});
 
 	test('Should render Log-out SideNavItem', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		renderSideNavBar();
 
 		const logoutSideNavItem = screen.getByTestId('logout-sidenav-item');
 
@@ -134,14 +98,18 @@ describe('SideNavBar component render tests', () => {
 const leftClick = { button: 0 };
 
 describe('SideNavBar component routes tests', () => {
-	test('Should navigate to users screen', () => {
-		const history = createMemoryHistory();
+	test('Should navigate to home screen', () => {
+		const history = renderSideNavBar();
 
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		const homeSideNavItem = screen.getByTestId('home-sidenav-item');
+
+		userEvent.click(homeSideNavItem, leftClick);
+
+		expect(history.location.pathname).toBe(HOME_ROUTE);
+	});
+
+	test('Should navigate to users screen', () => {
+		const history = renderSideNavBar();
 		
 		const usersSideNavItem = screen.getByTestId('users-sidenav-item');
 
@@ -151,13 +119,7 @@ describe('SideNavBar component routes tests', () => {
 	});
 
 	test('Should navigate to companies screen', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		const history = renderSideNavBar();
 		
 		const companiesSideNavItem = screen.getByTestId('companies-sidenav-item');
 
@@ -167,13 +129,7 @@ describe('SideNavBar component routes tests', () => {
 	});
 
 	test('Should navigate to tasks screen', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		const history = renderSideNavBar();
 		
 		const tasksSideNavItem = screen.getByTestId('tasks-sidenav-item');
 
@@ -183,13 +139,7 @@ describe('SideNavBar component routes tests', () => {
 	});
 
 	test('Should navigate to sprints screen', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		const history = renderSideNavBar();
 		
 		const sprintsSideNavItem = screen.getByTestId('sprints-sidenav-item');
 
@@ -199,34 +149,12 @@ describe('SideNavBar component routes tests', () => {
 	});
 
 	test('Should navigate to projects screen', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
+		const history = renderSideNavBar();
 		
 		const projectsSideNavItem = screen.getByTestId('projects-sidenav-item');
 
 		userEvent.click(projectsSideNavItem, leftClick);
 
 		expect(history.location.pathname).toBe(PROJECT_ROUTE);
-	});
-
-	test('Should navigate to login screen on log-out', () => {
-		const history = createMemoryHistory();
-
-		render(
-			<Router history={history}>
-				<SideNavBar />
-			</Router>
-		);
-		
-		const logoutSideNavItem = screen.getByTestId('logout-sidenav-item');
-
-		userEvent.click(logoutSideNavItem, leftClick);
-
-		expect(history.location.pathname).toBe(LOGIN_ROUTE);
 	});
 });
