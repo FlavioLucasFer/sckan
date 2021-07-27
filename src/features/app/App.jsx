@@ -35,7 +35,7 @@ function App() {
 			<Header data-testid='header' />
 			
 			<div className="row" style={{ height: '100%' }}>
-				<nav id="sidenav" className="col s0 m3 l2 white">
+				<nav id="sidenav" className="col s0 m3 l2 white" style={{ marginTop: '2px' }}>
 					<SideNavBar />
 				</nav>
 

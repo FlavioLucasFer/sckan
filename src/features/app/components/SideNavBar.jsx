@@ -1,5 +1,6 @@
 import './SideNavBar.css';
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { 
@@ -14,30 +15,46 @@ import {
 import Icon from 'core/components/Icon';
 import LogOutModal, { id as logOutModalId } from '../modals/LogOutModal';
 
-function SideNavBar() {
+const Divider = () => <li className="divider"></li>;
+
+SideNavItem.propTypes = {
+	label: PropTypes.string.isRequired,
+	icon: PropTypes.string.isRequired,
+	route: PropTypes.string.isRequired,
+	first: PropTypes.bool,
+};
+
+function SideNavItem(props) {
 	const { push } = useHistory();
 	const { pathname } = useLocation();
 
-	function renderLi(label, icon, route, testeid, first=false) {
-		const [iconColor, setIconColor] = useState('white-text');
-		const isCurrentRoute = pathname === route;
+	const {
+		route, 
+		label, 
+		icon, 
+		first,
+		...rest
+	} = props;
 
-		function handleMouseIn() {
-			setIconColor('grey-text text-lighten-1');
-		}
+	const [iconColor, setIconColor] = useState('white-text');
+	const isCurrentRoute = pathname === route;
 
-		function handleMouseOut() {
-			setIconColor('white-text');
-		}
+	function handleMouseIn() {
+		setIconColor('grey-text text-lighten-1');
+	}
 
-		function handleClick() {
-			if (route) 
-				push(route);
-		}
+	function handleMouseOut() {
+		setIconColor('white-text');
+	}
 
-		return (
-			<li data-testid={testeid} 
-				className={`
+	function handleClick() {
+		if (route)
+			push(route);
+	}
+
+	return (
+		<li {...rest}
+			className={`
 					btn-flat 
 					btn-large 
 					waves-effect 
@@ -45,46 +62,69 @@ function SideNavBar() {
 					sidenav-li 
 					${isCurrentRoute ? 'teal' : ''}
 				`}
-				onClick={handleClick}
-				onMouseEnter={handleMouseIn}
-				onMouseLeave={handleMouseOut}
-				style={{ marginTop: first ? 0 : '2.5px' }}>
-				<Icon className="left"
-					type="round"
-					color={isCurrentRoute ? 'teal-text text-accent-1' : 'grey-text text-darken-3'}>
-						{icon}
-				</Icon>
+			onClick={handleClick}
+			onMouseEnter={handleMouseIn}
+			onMouseLeave={handleMouseOut}
+			style={{ marginTop: first ? 0 : '2.5px' }}>
+			<Icon className="left"
+				type="round"
+				color={isCurrentRoute ? 'teal-text text-accent-1' : 'grey-text text-darken-3'}>
+				{icon}
+			</Icon>
 
-				<span className="sidenav-span">
-					{label}
-				</span>
+			<span className="sidenav-span">
+				{label}
+			</span>
 
-				<Icon className="right li-icon"
-					type="round"
-					color={isCurrentRoute ? 'teal-text text-lighten-3' : iconColor}>
-						{icon}
-				</Icon>
-			</li>
-		);
-	}
+			<Icon className="right li-icon"
+				type="round"
+				color={isCurrentRoute ? 'teal-text text-lighten-3' : iconColor}>
+				{icon}
+			</Icon>
+		</li>
+	);
+}
 
-	function renderDivider() {
-		return (
-			<li className="divider"></li>
-		);
-	}
-
+function SideNavBar() {
 	return (
 		<ul id="sidenav" data-testid="sidenav">
-			{renderLi('Home', 'home', HOME_ROUTE, 'home-sidenav-item', true)}
-			{renderLi('Users', 'manage_accounts', USER_ROUTE, 'users-sidenav-item')}
-			{renderLi('Companies', 'business', COMPANY_ROUTE, 'companies-sidenav-item')}
-			{renderLi('Tasks', 'task', TASK_ROUTE, 'tasks-sidenav-item')}
-			{renderLi('Sprints', 'wysiwyg', SPRINT_ROUTE, 'sprints-sidenav-item')}
-			{renderLi('Projects', 'source', PROJECT_ROUTE, 'projects-sidenav-item')}
-			{renderDivider()}
+			<SideNavItem route={HOME_ROUTE}
+				label="Home"
+				icon="home"
+				data-testid="home-sidenav-item"
+				first />
+
+			<SideNavItem route={USER_ROUTE}
+				label="Users"
+				icon="manage_accounts"
+				data-testid="users-sidenav-item" />
+
+			<SideNavItem route={COMPANY_ROUTE}
+				label="Companies"
+				icon="business"
+				data-testid="companies-sidenav-item" />
+
+			<SideNavItem route={TASK_ROUTE}
+				label="Tasks"
+				icon="task"
+				data-testid="tasks-sidenav-item" />
+
+			<SideNavItem route={SPRINT_ROUTE}
+				label="Sprints"
+				icon="wysiwyg"
+				data-testid="sprints-sidenav-item" />
+
+			<SideNavItem route={PROJECT_ROUTE}
+				label="Projects"
+				icon="source"
+				data-testid="projects-sidenav-item" />
+
+			<Divider />
+
 			<a className="modal-trigger" href={`#${logOutModalId}`}>
-				{renderLi('Log-out', 'logout', null, 'logout-sidenav-item')}
+				<SideNavItem label="Log-out"
+					icon="logout"
+					data-testid="logout-sidenav-item" />
 			</a>
 			
 			<LogOutModal />
