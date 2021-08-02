@@ -1,0 +1,56 @@
+.new-company-button {
+	margin-left: 1.424rem;
+}
+
+.list-actions-row {
+	/* display: flex; */
+	align-items: center;
+	/* justify-content: flex-start; */
+}
+
+.div-card-container {
+	padding: 0 !important;
+}
+
+.card-container {
+	min-height: 70vh;
+}
+
+.data-card {
+	position: relative;
+	width: 100%;
+	min-height: 300px;
+}
+
+.no-selected-company-message {
+	text-align: center;
+	margin: auto;
+}
+
+.actions {
+	position: absolute;
+	right: 12px;
+	top: 0px;
+}
+
+.actions>i {
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.actions>i:hover {
+	background-color: rgba(0, 0, 0, .1);
+}
+
+.company-informations-container>h5 {
+	margin-top: 0;
+}
+
+.company-informations-container>p {
+	font-size: 18px;
+}
+
+.company-informations-container>p>span {
+	font-weight: bold;
+}
