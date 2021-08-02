@@ -1,0 +1,54 @@
+.new-item-button {
+	margin-left: 1.424rem;
+}
+
+.list-actions-row {
+	align-items: center;
+}
+
+.div-card-container {
+	padding: 0 !important;
+}
+
+.card-container {
+	height: 70vh;
+}
+
+.data-card {
+	position: relative;
+	width: 100%;
+	min-height: 300px;
+}
+
+.no-selected-item-message {
+	text-align: center;
+	margin: auto;
+}
+
+.actions {
+	position: absolute;
+	right: 12px;
+	top: 0px;
+}
+
+.actions>i {
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.actions>i:hover {
+	background-color: rgba(0, 0, 0, .1);
+}
+
+.item-informations-container>h5 {
+	margin-top: 0;
+}
+
+.item-informations-container>p {
+	font-size: 18px;
+}
+
+.item-informations-container>p>span {
+	font-weight: bold;
+}
