@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-function useFormInput(initialValue) {
+function useFormInput(initialValue='') {
 	const [value, setValue] = useState(initialValue);
-
+	
 	function handleChange(e) {
-		setValue(e.target.value);
+		let { value } = e.target;
+
+		setValue(value);
 	}
 
 	return {
