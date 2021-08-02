@@ -1,0 +1,13 @@
+.screen-form {
+	overflow-y: auto;
+}
+
+.buttons-row {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+
+	width: 100%;
+	height: 100%;
+	margin: 0 !important;
+}
