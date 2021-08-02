@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import {
 	HOME_ROUTE,
@@ -11,20 +11,26 @@ import {
 	TASK_ROUTE,
 	USER_ROUTE,
 	COMPANY_FORM_ROUTE,
+	PROJECT_FORM_ROUTE,
+	SPRINT_FORM_ROUTE,
+	USER_FORM_ROUTE,
 } from 'core/utils/routes';
 
 import Header from 'features/app/components/Header';
+import SideNavBar from 'features/app/components/SideNavBar';
 
 import Home from 'features/home/Home';
 import Login from 'features/login/Login';
 import Companies from 'features/company/screens/Companies';
-import Project from 'features/project/Project';
-import Sprint from 'features/sprint/Sprint';
+import Projects from 'features/project/screens/Projects';
+import Sprints from 'features/sprint/screens/Sprints';
 import Task from 'features/task/Task';
-import User from 'features/user/User';
+import Users from 'features/user/screens/Users';
 
 import CompanyForm from 'features/company/screens/CompanyForm';
-import SideNavBar from './components/SideNavBar';
+import ProjectForm from 'features/project/screens/ProjectForm';
+import SprintForm from 'features/sprint/screens/SprintForm';
+import UserForm from 'features/user/screens/UserForm';
 
 function App() {
 	return (
@@ -53,17 +59,20 @@ function App() {
 
 							{/*Users routes*/}
 							<Route path={USER_ROUTE} data-testid='users-screen-route'>
-								<Route exact path={USER_ROUTE} component={User} data-testid='users-screen-route' />
+								<Route exact path={USER_ROUTE} component={Users} data-testid='users-screen-route' />
+								<Route exact path={USER_FORM_ROUTE} component={UserForm} data-testid='users-screen-route' />
 							</Route>
 							
 							{/*Projects routes*/}
 							<Route path={PROJECT_ROUTE} data-testid='projects-screen-route'>
-								<Route exact path={PROJECT_ROUTE} component={Project} data-testid='projects-screen-route' />
+								<Route exact path={PROJECT_ROUTE} component={Projects} data-testid='projects-screen-route' />
+								<Route exact path={PROJECT_FORM_ROUTE} component={ProjectForm} data-testid='project-form-screen-route' />
 							</Route>
 
 							{/*Sprints routes*/}
 							<Route path={SPRINT_ROUTE} data-testid='sprints-screen-route'>
-								<Route exact path={SPRINT_ROUTE} component={Sprint} data-testid='sprints-screen-route' />
+								<Route exact path={SPRINT_ROUTE} component={Sprints} data-testid='sprints-screen-route' />
+								<Route exact path={SPRINT_FORM_ROUTE} component={SprintForm} data-testid='sprints-form-screen-route' />
 							</Route>
 							
 							{/*Tasks routes*/}

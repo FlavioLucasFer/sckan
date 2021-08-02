@@ -1,4 +1,4 @@
-import './SideNavBar.css';
+import './css/SideNavBar.css';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -13,7 +13,8 @@ import {
 } from 'core/utils/routes';
 
 import Icon from 'core/components/Icon';
-import LogOutModal, { id as logOutModalId } from '../modals/LogOutModal';
+
+import LogOutModal from '../modals/LogOutModal';
 
 const Divider = () => <li className="divider"></li>;
 
@@ -121,13 +122,13 @@ function SideNavBar() {
 
 			<Divider />
 
-			<a className="modal-trigger" href={`#${logOutModalId}`}>
+			<a className="modal-trigger" href="#logout-modal">
 				<SideNavItem label="Log-out"
 					icon="logout"
 					data-testid="logout-sidenav-item" />
 			</a>
 			
-			<LogOutModal />
+			<LogOutModal id="logout-modal" />
 		</ul>
 	);
 }
