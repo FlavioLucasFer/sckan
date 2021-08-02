@@ -1,0 +1,40 @@
+@media screen and (max-width: 1440px) {
+	.action-card {
+		padding: 16px;
+	}
+	
+	.action-icon {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.action-card {
+		padding: 14px;
+	}
+	
+	.action-icon {
+		font-size: 35px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.action-card {
+		padding: 12px !important;
+	}
+	
+	.action-icon {
+		font-size: 30px !important;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.action-card {
+		padding: 24px !important;
+	}
+	
+	.action-icon {
+		font-size: 60px !important;
+	}
+	
+}
