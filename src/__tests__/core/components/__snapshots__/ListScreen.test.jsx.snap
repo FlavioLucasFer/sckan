@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing ListScreen core component should render correctly 1`] = `
+"<section>
+  <h2 className=\\"screen-title grey-text text-darken-3\\">
+    Users
+    <Button id=\\"new-item-button\\" className=\\"new-item-button pulse\\" type=\\"floating\\" color=\\"teal accent-4\\" size=\\"large\\" tooltip=\\"New company\\" tooltipPosition=\\"right\\" icon={{...}} onClick={[Function: handleNavigationToForm]} />
+  </h2>
+  <CardPanel className=\\"s12 div-card-container\\" cardClassName=\\"card-container\\">
+    <h3 className=\\"grey-text bold-text\\">
+      No 
+      users
+       found!
+    </h3>
+  </CardPanel>
+</section>"
+`;
+
+exports[`Testing ListScreen core component should render correctly 2`] = `
+"<section>
+  <h2 className=\\"screen-title grey-text text-darken-3\\">
+    Companies
+    <Button id=\\"new-item-button\\" className=\\"new-item-button false\\" type=\\"floating\\" color=\\"teal accent-4\\" size=\\"large\\" tooltip=\\"New company\\" tooltipPosition=\\"right\\" icon={{...}} onClick={[Function: handleNavigationToForm]} />
+  </h2>
+  <CardPanel className=\\"s12 div-card-container\\" cardClassName=\\"card-container\\">
+    <div className=\\"row\\">
+      <div className=\\"col s12 m6\\">
+        <div className=\\"row\\" style={{...}}>
+          <div className=\\"col s8\\">
+            <SearchInput />
+          </div>
+          <div className=\\"col s2 vertical-center-content\\">
+            <Icon type=\\"round\\" size=\\"small\\" color=\\"grey-text text-darken-3\\" tooltip=\\"Refresh companies list\\" tooltipPosition=\\"top\\" style={{...}} onClick={[Function: onRefresh]}>
+              refresh
+            </Icon>
+          </div>
+        </div>
+        <Collection items={{...}} identifier=\\"name\\" onSelect={[Function: handleSelection]} />
+        <Pagination pagesQuantity={2} />
+      </div>
+      <div className=\\"col s12 m6\\">
+        <CardPanel className=\\"col s12\\" cardClassName=\\"data-card teal lighten-4\\">
+          <NoSelectedItemMessage selectedItem={{...}} singularTitle=\\"User\\" />
+          <Actions selectedItem={{...}} />
+          <SelectedItemInformations selectedItem={{...}} identifierField=\\"name\\" fields={{...}} />
+        </CardPanel>
+      </div>
+    </div>
+  </CardPanel>
+</section>"
+`;

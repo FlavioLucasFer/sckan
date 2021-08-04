@@ -7,7 +7,7 @@ import Card from 'core/components/Card';
 
 FeatureCard.propTypes = {
 	featureIcon: PropTypes.string.isRequired,
-	children: PropTypes.node,
+	children: PropTypes.element,
 };
 
 function FeatureCard(props) {

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing SideNavBar app feature component should render correctly 1`] = `
+"<ul id=\\"sidenav\\" data-testid=\\"sidenav\\">
+  <SideNavItem route=\\"/\\" label=\\"Home\\" icon=\\"home\\" data-testid=\\"home-sidenav-item\\" first={true} />
+  <SideNavItem route=\\"/users\\" label=\\"Users\\" icon=\\"manage_accounts\\" data-testid=\\"users-sidenav-item\\" />
+  <SideNavItem route=\\"/companies\\" label=\\"Companies\\" icon=\\"business\\" data-testid=\\"companies-sidenav-item\\" />
+  <SideNavItem route=\\"/tasks\\" label=\\"Tasks\\" icon=\\"task\\" data-testid=\\"tasks-sidenav-item\\" />
+  <SideNavItem route=\\"/sprints\\" label=\\"Sprints\\" icon=\\"wysiwyg\\" data-testid=\\"sprints-sidenav-item\\" />
+  <SideNavItem route=\\"/projects\\" label=\\"Projects\\" icon=\\"source\\" data-testid=\\"projects-sidenav-item\\" />
+  <Divider />
+  <a className=\\"modal-trigger\\" href=\\"#logout-modal\\">
+    <SideNavItem label=\\"Log-out\\" icon=\\"logout\\" data-testid=\\"logout-sidenav-item\\" />
+  </a>
+  <LogOutModal id=\\"logout-modal\\" />
+</ul>"
+`;

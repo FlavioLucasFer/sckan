@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import ListScreen from 'core/components/ListScreen';
 import { COMPANY_FORM_ROUTE } from 'core/utils/routes';
 
-function Company() {
+function Companies() {
 	const [data, setData] = useState([
 		{
 			id: 1213,
@@ -45,4 +45,4 @@ function Company() {
 	);
 }
 
-export default Company;
+export default Companies;

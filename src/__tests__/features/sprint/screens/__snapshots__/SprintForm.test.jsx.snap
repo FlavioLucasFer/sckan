@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing SprintForm form component should render correctly 1`] = `
+"<FormScreen title=\\"Sprint\\" id={[undefined]}>
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Custom identifier\\" className=\\"col s12 m6 l4\\" type=\\"text\\" icon=\\"tag\\" validate={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Duration\\" className=\\"col s12 m6 l4\\" type=\\"number\\" icon=\\"timelapse\\" validate={true} mandatory={true} required={true} />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Project\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a project\\" icon=\\"source\\" />
+    <TextArea value=\\"\\" onChange={[Function: handleChange]} title=\\"Description\\" className=\\"col s12\\" type=\\"text\\" icon=\\"description\\" length=\\"255\\" />
+  </div>
+</FormScreen>"
+`;
+
+exports[`Testing SprintForm form component should render correctly 2`] = `
+"<FormScreen title=\\"Sprint\\" id=\\"6786786\\">
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Custom identifier\\" className=\\"col s12 m6 l4\\" type=\\"text\\" icon=\\"tag\\" validate={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Duration\\" className=\\"col s12 m6 l4\\" type=\\"number\\" icon=\\"timelapse\\" validate={true} mandatory={true} required={true} />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Project\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a project\\" icon=\\"source\\" />
+    <TextArea value=\\"\\" onChange={[Function: handleChange]} title=\\"Description\\" className=\\"col s12\\" type=\\"text\\" icon=\\"description\\" length=\\"255\\" />
+  </div>
+</FormScreen>"
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing CardPanel core component should render correctly 1`] = `
+"<div className=\\"col \\">
+  <div id=\\"card-panel-1\\" className=\\"\\\\n\\\\t\\\\t\\\\t\\\\t\\\\tcard-panel \\\\n\\\\t\\\\t\\\\t\\\\t\\\\tundefined\\\\n\\\\t\\\\t\\\\t\\\\t\\\\t \\\\n\\\\t\\\\t\\\\t\\\\t\\\\t\\\\n\\\\t\\\\t\\\\t\\\\t\\" data-position=\\"bottom\\" data-tooltip=\\"\\" onClick={[Function: handleClick]}>
+    <h2>
+      testing
+    </h2>
+  </div>
+</div>"
+`;
+
+exports[`Testing CardPanel core component should render correctly 2`] = `
+"<div className=\\"col col s12\\">
+  <div id=\\"card-panel-1\\" className=\\"\\\\n\\\\t\\\\t\\\\t\\\\t\\\\tcard-panel \\\\n\\\\t\\\\t\\\\t\\\\t\\\\ttooltipped\\\\n\\\\t\\\\t\\\\t\\\\t\\\\tcol s12 \\\\n\\\\t\\\\t\\\\t\\\\t\\\\tteal\\\\n\\\\t\\\\t\\\\t\\\\t\\" data-position=\\"right\\" data-tooltip=\\"testing\\" onClick={[Function: handleClick]}>
+    <h2>
+      testing
+    </h2>
+  </div>
+</div>"
+`;

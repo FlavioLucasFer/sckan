@@ -1,13 +1,23 @@
 {
-    "compilerOptions": {
-        "target": "es6",
-        "baseUrl": "src",
-        "paths": {
-            "core/*": ["./src/core/*"],
-            "features/*": ["./src/features/*"],
-            "redux/*": ["./src/redux/*"]
-        }
-    },
-    "include": ["src"],
-    "exclude": ["node_modules"]
+	"compilerOptions": {
+		"target": "es6",
+		"baseUrl": "src",
+		"paths": {
+			"core/*": [
+				"./src/core/*"
+			],
+			"features/*": [
+				"./src/features/*"
+			],
+			"redux/*": [
+				"./src/redux/*"
+			]
+		}
+	},
+	"include": [
+		"src"
+	],
+	"exclude": [
+		"node_modules"
+	]
 }

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ListScreen from 'core/components/ListScreen';
 import { USER_FORM_ROUTE } from 'core/utils/routes';
 
-function User() {
+function Users() {
 	const [data, setData] = useState([]);
 	const fields = [{}];
 
@@ -19,4 +19,4 @@ function User() {
   );
 }
 
-export default User;
+export default Users;

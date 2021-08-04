@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Pagination core component should render correctly 1`] = `
+"<ul className=\\"pagination\\" style={{...}}>
+  <li id=\\"goto-previous-page\\" className=\\"disabled\\" onClick={false}>
+    <a>
+      <i className=\\"material-icons\\">
+        chevron_left
+      </i>
+    </a>
+  </li>
+  <li className=\\"active active-page\\" onClick={[Function: onClick]}>
+    <a>
+      1
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      2
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      3
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      4
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      5
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      6
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      7
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      8
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      9
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      10
+    </a>
+  </li>
+  <li id=\\"goto-next-page\\" className=\\"waves-effect\\" onClick={[Function: handleClickOnNextPage]}>
+    <a>
+      <i className=\\"material-icons\\">
+        chevron_right
+      </i>
+    </a>
+  </li>
+</ul>"
+`;
+
+exports[`Testing Pagination core component should render correctly 2`] = `
+"<ul className=\\"pagination\\" style={{...}}>
+  <li id=\\"goto-previous-page\\" className=\\"disabled\\" onClick={false}>
+    <a>
+      <i className=\\"material-icons\\">
+        chevron_left
+      </i>
+    </a>
+  </li>
+  <li className=\\"active active-page\\" onClick={[Function: onClick]}>
+    <a>
+      1
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      2
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      3
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      4
+    </a>
+  </li>
+  <li className=\\"waves-effect\\" onClick={[Function: onClick]}>
+    <a>
+      5
+    </a>
+  </li>
+  <li id=\\"goto-next-page\\" className=\\"waves-effect\\" onClick={[Function: handleClickOnNextPage]}>
+    <a>
+      <i className=\\"material-icons\\">
+        chevron_right
+      </i>
+    </a>
+  </li>
+</ul>"
+`;

@@ -10,6 +10,8 @@ const TASK_ROUTE = '/tasks';
 const TASK_FORM_ROUTE = `${TASK_ROUTE}/form`;
 const USER_ROUTE = '/users';
 const USER_FORM_ROUTE = `${USER_ROUTE}/form`;
+const USER_PROFILE = '/user';
+const USER_SITTINGS = `${USER_PROFILE}/settings`;
 
 export {
 	HOME_ROUTE,
@@ -24,4 +26,6 @@ export {
 	TASK_FORM_ROUTE,
   USER_ROUTE,
 	USER_FORM_ROUTE,
+	USER_PROFILE,
+	USER_SITTINGS,
 };

@@ -20,10 +20,12 @@ function ConfirmActionModal(props) {
 	} = props;
 
 	const actions = [{
+		id: 'confirm-action',
 		title: 'Yes',
 		className: 'modal-close waves-green',
 		onClick: () => onConfirm(),
 	}, {
+		id: 'deny-action',
 		title: 'No',
 		className: 'modal-close waves-red',
 		onClick: () => onCancel && onCancel(),

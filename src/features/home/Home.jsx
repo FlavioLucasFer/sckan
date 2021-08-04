@@ -5,7 +5,19 @@ import { useHistory } from 'react-router-dom';
 import FeatureCard from './components/FeatureCard';
 import CardPanel from 'core/components/CardPanel';
 import Icon from 'core/components/Icon';
-import { COMPANY_FORM_ROUTE, COMPANY_ROUTE, PROJECT_FORM_ROUTE, PROJECT_ROUTE, SPRINT_FORM_ROUTE, SPRINT_ROUTE, TASK_FORM_ROUTE, TASK_ROUTE, USER_FORM_ROUTE, USER_ROUTE } from 'core/utils/routes';
+import { 
+	COMPANY_FORM_ROUTE, 
+	COMPANY_ROUTE, 
+	PROJECT_FORM_ROUTE, 
+	PROJECT_ROUTE, 
+	SPRINT_FORM_ROUTE, 
+	SPRINT_ROUTE, 
+	TASK_FORM_ROUTE, 
+	TASK_ROUTE, 
+	USER_FORM_ROUTE, 
+	USER_ROUTE, 
+	USER_SITTINGS, 
+} from 'core/utils/routes';
 
 function Home() {
 	const { push } = useHistory();
@@ -23,7 +35,8 @@ function Home() {
 					<div className="col s12 m6 xl4">
 						<FeatureCard title="Tasks"
 							featureIcon="task">
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="add-task-card" 
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="green accent-4"
 								tooltip="Add new task"
 								onClick={() => push(TASK_FORM_ROUTE)}>
@@ -34,7 +47,8 @@ function Home() {
 								</Icon>
 							</CardPanel>
 
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="tasks-list-card"
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="light-blue"
 								tooltip="Tasks list"
 								onClick={() => push(TASK_ROUTE)}>
@@ -50,7 +64,8 @@ function Home() {
 					<div className="col s12 m6 xl4">
 						<FeatureCard title="Users"
 							featureIcon="manage_accounts">
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="add-user-card"
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="green accent-4"
 								tooltip="Add new user"
 								onClick={() => push(USER_FORM_ROUTE)}>
@@ -61,7 +76,8 @@ function Home() {
 								</Icon>
 							</CardPanel>
 
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="users-list-card"
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="light-blue"
 								tooltip="Users list"
 								onClick={() => push(USER_ROUTE)}>
@@ -77,7 +93,8 @@ function Home() {
 					<div className="col s12 m6 xl4">
 						<FeatureCard title="Companies"
 							featureIcon="business">
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="add-company-card"
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="green accent-4"
 								tooltip="Add new company"
 								onClick={() => push(COMPANY_FORM_ROUTE)}>
@@ -88,7 +105,8 @@ function Home() {
 								</Icon>
 							</CardPanel>
 
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="companies-list-card"
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="light-blue"
 								tooltip="Companies list"
 								onClick={() => push(COMPANY_ROUTE)}>
@@ -104,7 +122,8 @@ function Home() {
 					<div className="col s12 m6 xl4">
 						<FeatureCard title="Sprints"
 							featureIcon="wysiwyg">
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="add-sprint-card"
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="green accent-4"
 								tooltip="Add new sprint"
 								onClick={() => push(SPRINT_FORM_ROUTE)}>
@@ -115,7 +134,8 @@ function Home() {
 								</Icon>
 							</CardPanel>
 
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="sprints-list-card"
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="light-blue"
 								tooltip="Sprints list"
 								onClick={() => push(SPRINT_ROUTE)}>
@@ -131,7 +151,8 @@ function Home() {
 					<div className="col s12 m6 xl4">
 						<FeatureCard title="Projects"
 							featureIcon="source">
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="add-project-card"
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="green accent-4"
 								tooltip="Add new project"
 								onClick={() => push(PROJECT_FORM_ROUTE)}>
@@ -142,7 +163,8 @@ function Home() {
 								</Icon>
 							</CardPanel>
 
-							<CardPanel cardClassName="waves-effect waves-light action-card"
+							<CardPanel id="projects-list-card"
+								cardClassName="waves-effect waves-light action-card"
 								backgroundColor="light-blue"
 								tooltip="Projects list"
 								onClick={() => push(PROJECT_ROUTE)}>
@@ -155,9 +177,11 @@ function Home() {
 						</FeatureCard>
 					</div>
 
-					<CardPanel cardClassName="s12 m2 waves-effect waves-light"
+					<CardPanel id="user-settings-card"
+						cardClassName="s12 m2 waves-effect waves-light"
 						backgroundColor="grey lighten-4"
-						tooltip="Settings">
+						tooltip="Settings"
+						onClick={() => push(USER_SITTINGS)}>
 						<Icon type="round" 
 							size="large"
 							color="grey-text text-darken-3">

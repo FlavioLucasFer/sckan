@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing UserForm form component should render correctly 1`] = `
+"<FormScreen title=\\"User\\" id={[undefined]}>
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Name\\" className=\\"col s12 m6 l8\\" type=\\"text\\" icon=\\"account_box\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"CPF\\" className=\\"col s12 m6 l4\\" type=\\"text\\" icon=\\"assignment_ind\\" mask=\\"cpf\\" validateBy=\\"cpf\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Login\\" className=\\"col s12 m6\\" type=\\"text\\" icon=\\"login\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Password\\" className=\\"col s12 m6\\" type=\\"password\\" icon=\\"visibility\\" validate={true} mandatory={true} required={true} iconClick={[Function: handlePasswordVisilityIconClick]} />
+  </div>
+  <div className=\\"row\\">
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Company position\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a company position\\" icon=\\"badge\\" />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Company\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a company\\" icon=\\"business\\" />
+  </div>
+</FormScreen>"
+`;
+
+exports[`Testing UserForm form component should render correctly 2`] = `
+"<FormScreen title=\\"User\\" id=\\"98890890\\">
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Name\\" className=\\"col s12 m6 l8\\" type=\\"text\\" icon=\\"account_box\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"CPF\\" className=\\"col s12 m6 l4\\" type=\\"text\\" icon=\\"assignment_ind\\" mask=\\"cpf\\" validateBy=\\"cpf\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Login\\" className=\\"col s12 m6\\" type=\\"text\\" icon=\\"login\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Password\\" className=\\"col s12 m6\\" type=\\"password\\" icon=\\"visibility\\" validate={true} mandatory={true} required={true} iconClick={[Function: handlePasswordVisilityIconClick]} />
+  </div>
+  <div className=\\"row\\">
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Company position\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a company position\\" icon=\\"badge\\" />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Company\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a company\\" icon=\\"business\\" />
+  </div>
+</FormScreen>"
+`;

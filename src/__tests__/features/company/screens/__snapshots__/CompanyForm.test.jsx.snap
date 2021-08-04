@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing CompanyForm form component should render correctly 1`] = `
+"<FormScreen title=\\"Company\\" id={[undefined]}>
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Company name\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"business\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Trading name\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"storefront\\" validate={true} mandatory={true} required={true} />
+  </div>
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Federal document\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"assignment_ind\\" mask=\\"federalDocument\\" validateBy=\\"federalDocument\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Email name\\" className=\\"col s12 l6\\" type=\\"email\\" icon=\\"email\\" validateBy=\\"email\\" validate={true} mandatory={true} required={true} />
+  </div>
+</FormScreen>"
+`;
+
+exports[`Testing CompanyForm form component should render correctly 2`] = `
+"<FormScreen title=\\"Company\\" id=\\"2446456\\">
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Company name\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"business\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Trading name\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"storefront\\" validate={true} mandatory={true} required={true} />
+  </div>
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Federal document\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"assignment_ind\\" mask=\\"federalDocument\\" validateBy=\\"federalDocument\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Email name\\" className=\\"col s12 l6\\" type=\\"email\\" icon=\\"email\\" validateBy=\\"email\\" validate={true} mandatory={true} required={true} />
+  </div>
+</FormScreen>"
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing TextArea core component should render correctly 1`] = `
+"<div className=\\"input-field \\">
+  <textarea id=\\"text-area-1\\" className=\\"materialize-textarea\\" data-length={[undefined]} maxLength={[undefined]} />
+  <label htmlFor=\\"text-area-1\\" />
+</div>"
+`;
+
+exports[`Testing TextArea core component should render correctly 2`] = `
+"<div className=\\"input-field teal\\">
+  <Icon className=\\"prefix\\" color=\\"grey-text\\">
+    business
+  </Icon>
+  <textarea id=\\"text-area-2\\" className=\\"materialize-textarea\\" data-length=\\"255\\" maxLength=\\"255\\" />
+  <label htmlFor=\\"text-area-2\\">
+    textarea test
+  </label>
+</div>"
+`;

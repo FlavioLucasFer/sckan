@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ListScreen from 'core/components/ListScreen';
 import { PROJECT_FORM_ROUTE } from 'core/utils/routes';
 
-function Project() {
+function Projects() {
 	const [data, setData] = useState([]);
 	const fields = [{}];
 
@@ -19,4 +19,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default Projects;

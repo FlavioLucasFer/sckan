@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Icon core component should render correctly 1`] = `
+"<i className=\\"\\\\n\\\\t\\\\t\\\\t\\\\tundefined\\\\n\\\\t\\\\t\\\\t\\\\t  \\\\n\\\\t\\\\t\\\\t\\\\tmaterial-icons-outlined\\\\n\\\\t\\\\t\\\\t\\\\t\\\\n\\\\t\\\\t\\\\t\\" data-position=\\"bottom\\" data-tooltip=\\"\\" onClick={[Function: handleClick]}>
+  business
+</i>"
+`;
+
+exports[`Testing Icon core component should render correctly 2`] = `
+"<i tooptipPosition=\\"left\\" tooptip=\\"testing\\" className=\\"\\\\n\\\\t\\\\t\\\\t\\\\tundefined\\\\n\\\\t\\\\t\\\\t\\\\tbold-text large \\\\n\\\\t\\\\t\\\\t\\\\tmaterial-icons-round\\\\n\\\\t\\\\t\\\\t\\\\tgrey-text\\\\n\\\\t\\\\t\\\\t\\" data-position=\\"bottom\\" data-tooltip=\\"\\" onClick={[Function: handleClick]}>
+  business
+</i>"
+`;

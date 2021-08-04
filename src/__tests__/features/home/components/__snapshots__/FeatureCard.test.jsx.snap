@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing FeatureCard home feature component should render correctly 1`] = `
+"<div id=\\"container\\">
+  <ForwardRef(Card) icon=\\"business\\" className=\\"s12\\" cardTitleClassName=\\"feature-card-title\\" style={{...}}>
+    <h2>
+      testing feature card
+    </h2>
+    <Icon className=\\"feature-icon\\" />
+  </ForwardRef(Card)>
+</div>"
+`;
+
+exports[`Testing FeatureCard home feature component should render correctly 2`] = `
+"<div id=\\"container\\">
+  <ForwardRef(Card) icon=\\"add\\" className=\\"s12\\" cardTitleClassName=\\"feature-card-title\\" style={{...}}>
+    <h2>
+      testing feature card
+    </h2>
+    <Icon className=\\"feature-icon\\" />
+  </ForwardRef(Card)>
+</div>"
+`;

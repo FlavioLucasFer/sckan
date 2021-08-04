@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing ProjectForm form component should render correctly 1`] = `
+"<FormScreen title=\\"Project\\" id={[undefined]}>
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Name\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"source\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Contractor name\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"face\\" validate={true} />
+    <TextArea value=\\"\\" onChange={[Function: handleChange]} title=\\"Description\\" className=\\"col s12\\" type=\\"text\\" icon=\\"description\\" length=\\"500\\" />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Clone link\\" className=\\"col s12\\" type=\\"url\\" icon=\\"link\\" validate={true} />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Scrum master\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a user\\" icon=\\"person\\" />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Product owner\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a user\\" icon=\\"person\\" />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"User that created project\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a user\\" icon=\\"person\\" />
+  </div>
+</FormScreen>"
+`;
+
+exports[`Testing ProjectForm form component should render correctly 2`] = `
+"<FormScreen title=\\"Project\\" id=\\"6786786\\">
+  <div className=\\"row\\">
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Name\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"source\\" validate={true} mandatory={true} required={true} />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Contractor name\\" className=\\"col s12 l6\\" type=\\"text\\" icon=\\"face\\" validate={true} />
+    <TextArea value=\\"\\" onChange={[Function: handleChange]} title=\\"Description\\" className=\\"col s12\\" type=\\"text\\" icon=\\"description\\" length=\\"500\\" />
+    <TextInput value=\\"\\" onChange={[Function: handleChange]} title=\\"Clone link\\" className=\\"col s12\\" type=\\"url\\" icon=\\"link\\" validate={true} />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Scrum master\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a user\\" icon=\\"person\\" />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"Product owner\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a user\\" icon=\\"person\\" />
+    <Select value=\\"\\" onChange={[Function: handleChange]} title=\\"User that created project\\" className=\\"col s12 m6 l4\\" values={{...}} defaultOption=\\"Select a user\\" icon=\\"person\\" />
+  </div>
+</FormScreen>"
+`;

@@ -177,7 +177,8 @@ function ListScreen(props) {
 			<h2 className="screen-title grey-text text-darken-3">
 				{title}
 
-				<Button className={`new-item-button ${isEmpty(data) && 'pulse'}`}
+				<Button id="new-item-button"
+					className={`new-item-button ${isEmpty(data) && 'pulse'}`}
 					type="floating"
 					color="teal accent-4"
 					size="large"
