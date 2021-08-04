@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Button core component should render correctly 1`] = `"<a id=\\"button-1\\" className=\\"\\\\n\\\\t\\\\t\\\\t\\\\tbtn\\\\n\\\\t\\\\t\\\\t\\\\tbtn-medium \\\\n\\\\t\\\\t\\\\t\\\\tundefined\\\\n\\\\t\\\\t\\\\t\\\\twaves-effect waves-light \\\\n\\\\t\\\\t\\\\t\\\\twhite\\\\n\\\\t\\\\t\\\\t\\\\t\\\\n\\\\t\\\\t\\\\t\\" data-position=\\"bottom\\" data-tooltip=\\"\\" onClick={[Function: handleClick]} />"`;
+
+exports[`Testing Button core component should render correctly 2`] = `
+"<a id=\\"button-1\\" className=\\"\\\\n\\\\t\\\\t\\\\t\\\\tbtn-round\\\\n\\\\t\\\\t\\\\t\\\\tbtn-small \\\\n\\\\t\\\\t\\\\t\\\\ttooltipped\\\\n\\\\t\\\\t\\\\t\\\\twaves-effect waves-light \\\\n\\\\t\\\\t\\\\t\\\\tred\\\\n\\\\t\\\\t\\\\t\\\\tgrey-text\\\\n\\\\t\\\\t\\\\t\\" data-position=\\"top\\" data-tooltip=\\"testing\\" onClick={[Function: handleClick]}>
+  <Icon name=\\"business\\">
+    business
+  </Icon>
+  testing
+</a>"
+`;

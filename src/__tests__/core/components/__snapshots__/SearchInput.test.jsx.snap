@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing SearchInput core component should render correctly 1`] = `
+"<div className=\\"nav-wrapper grey lighten-5\\" data-testid=\\"search-bar\\" style={{...}}>
+  <form onSubmit={[Function: onSubmit]}>
+    <div className=\\"input-field\\">
+      <input className=\\"grey lighten-5\\" id=\\"search\\" type=\\"search\\" value=\\"\\" onChange={[Function: handleChange]} />
+      <label className=\\"label-icon vertical-center-content\\" htmlFor=\\"search\\">
+        <i className=\\"material-icons-round\\">
+          search
+        </i>
+      </label>
+      <i className=\\"material-icons vertical-center-content\\" onClick={[Function: handleClear]}>
+        cancel
+      </i>
+    </div>
+  </form>
+</div>"
+`;

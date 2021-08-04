@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing LogOutModal app feature modal component should render correctly 1`] = `"<ConfirmActionModal id=\\"logout-modal-test\\" title=\\"Are you sure you want logout?\\" onConfirm={[Function: handleConfirm]} />"`;

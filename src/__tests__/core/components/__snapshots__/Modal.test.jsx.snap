@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Modal core component should render correctly 1`] = `
+"<div className=\\"modal  \\">
+  <div className=\\"modal-content\\">
+    <h5>
+      modal test
+    </h5>
+    <h2>
+      testing
+    </h2>
+  </div>
+</div>"
+`;
+
+exports[`Testing Modal core component should render correctly 2`] = `
+"<div className=\\"modal teal modal-fixed-footer\\">
+  <div className=\\"modal-content\\">
+    <h5>
+      testing modal
+    </h5>
+    <h2>
+      testing
+    </h2>
+  </div>
+  <div className=\\"modal-footer\\">
+    <a title=\\"action1\\" className=\\"waves-effect red btn-flat footer-button\\" href=\\"hreftest1\\">
+      action1
+    </a>
+    <a title=\\"action2\\" className=\\"waves-effect green btn-flat footer-button\\" href=\\"hreftest2\\">
+      action2
+    </a>
+    <a title=\\"action3\\" className=\\"waves-effect teal btn-flat footer-button\\" href=\\"hreftest3\\">
+      action3
+    </a>
+  </div>
+</div>"
+`;

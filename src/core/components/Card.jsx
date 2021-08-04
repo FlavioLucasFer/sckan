@@ -51,10 +51,12 @@ function Card(props, ref) {
 						{children}
 					</div>
 				</div>
-				{renderActions}
+				{renderActions()}
 			</div>
 		</div>
 	);
 }
+
+Card.displayName = 'Card';
 
 export default forwardRef(Card);

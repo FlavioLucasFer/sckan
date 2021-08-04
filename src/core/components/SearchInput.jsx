@@ -5,7 +5,7 @@ SearchInput.propTypes = {
 	onChange: PropTypes.func,
 };
 
-function SearchInput({onChange}) {
+function SearchInput({ onChange }) {
 	const [value, setValue] = useState('');
 
 	function handleChange(e) {

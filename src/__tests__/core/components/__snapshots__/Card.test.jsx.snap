@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Card core component should render correctly 1`] = `
+"<div className=\\"col \\">
+  <div className=\\"card  \\">
+    <div className=\\"card-content  \\">
+      <span className=\\"card-title \\">
+        test
+      </span>
+      <div className=\\"row\\" style={{...}}>
+        <h1>
+          testing
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`Testing Card core component should render correctly 2`] = `
+"<div className=\\"col s12\\">
+  <div className=\\"card col s12 teal\\">
+    <div className=\\"card-content  grey-text\\">
+      <span className=\\"card-title bold-text\\">
+        testing
+      </span>
+      <div className=\\"row\\" style={{...}}>
+        <h1>
+          testing
+        </h1>
+      </div>
+    </div>
+    <div className=\\"card-action\\">
+      <a href=\\"test1\\">
+        test1
+      </a>
+      <a href=\\"test2\\">
+        test2
+      </a>
+      <a href=\\"test3\\">
+        test3
+      </a>
+    </div>
+  </div>
+</div>"
+`;

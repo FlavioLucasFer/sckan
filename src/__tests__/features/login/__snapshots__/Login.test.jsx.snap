@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Login screen component should render correctly 1`] = `
+"<section id=\\"main-row\\" className=\\"row\\" style={{...}}>
+  <div id=\\"left-col\\" className=\\"col s12 m6 l7 left-col\\">
+    <h1 className=\\"app-name\\" data-testid=\\"app-name\\">
+      Sckan
+    </h1>
+  </div>
+  <div id=\\"right-col\\" className=\\"col s12 m6 l5 teal right-col\\">
+    <div className=\\"row\\" id=\\"login-card-row\\" style={{...}}>
+      <div className=\\"col s12 l11 xl8\\" id=\\"login-card-col\\" style={{...}}>
+        <CardPanel id=\\"login-card\\">
+          <TextInput value=\\"\\" onChange={[Function: handleChange]} id=\\"user-identification-input\\" data-testid=\\"user-identification-input\\" title=\\"User identification\\" className=\\"col s12\\" validate={true} mandatory={true} required={true} />
+          <TextInput value=\\"\\" onChange={[Function: handleChange]} id=\\"user-password-input\\" data-testid=\\"user-password-input\\" title=\\"Password\\" className=\\"col s12\\" password={true} validate={true} mandatory={true} required={true} />
+          <Button id=\\"signin-button\\" title=\\"Sign-in\\" className=\\"cyan accent-3 signin-button\\" data-testid=\\"signin-button\\" onClick={[Function: handleSignIn]} />
+        </CardPanel>
+      </div>
+    </div>
+  </div>
+</section>"
+`;

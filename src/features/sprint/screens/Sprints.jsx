@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ListScreen from 'core/components/ListScreen';
 import { SPRINT_FORM_ROUTE } from 'core/utils/routes';
 
-function Sprint() {
+function Sprints() {
 	const [data, setData] = useState([]);
 	const fields = [{}];
 
@@ -19,4 +19,4 @@ function Sprint() {
   );
 }
 
-export default Sprint;
+export default Sprints;

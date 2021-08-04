@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Select core component should render correctly 1`] = `
+"<div className=\\"input-field undefined\\">
+  <select>
+    <option value=\\"opt1\\">
+      option1
+    </option>
+    <option value=\\"opt2\\">
+      option2
+    </option>
+    <option value=\\"opt3\\">
+      option3
+    </option>
+  </select>
+  <label>
+    select test
+  </label>
+</div>"
+`;
+
+exports[`Testing Select core component should render correctly 2`] = `
+"<div className=\\"input-field col s12\\">
+  <Icon className=\\"prefix\\" color=\\"grey-text\\">
+    business
+  </Icon>
+  <select>
+    <option value=\\"\\" disabled={true} selected={true}>
+      select a option
+    </option>
+    <option value=\\"opt4\\">
+      option4
+    </option>
+    <option value=\\"opt5\\">
+      option5
+    </option>
+  </select>
+  <label>
+    testing
+  </label>
+</div>"
+`;

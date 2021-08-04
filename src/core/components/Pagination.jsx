@@ -40,12 +40,12 @@ function Pagination(props) {
 	return (
 		<ul className="pagination"
 			style={{ textAlign: 'center' }}>
-			<li className={activePage === 1 ? 'disabled' : 'waves-effect'}
+			<li id="goto-previous-page" className={activePage === 1 ? 'disabled' : 'waves-effect'}
 				onClick={activePage > 1 && handleClickOnPreviousPage}>
 				<a><i className="material-icons">chevron_left</i></a>
 			</li>
 			{renderPages()}
-			<li className={activePage === pagesQuantity ? 'disabled' : 'waves-effect'}
+			<li id="goto-next-page" className={activePage === pagesQuantity ? 'disabled' : 'waves-effect'}
 				onClick={activePage < pagesQuantity && handleClickOnNextPage}>
 				<a><i className="material-icons">chevron_right</i></a>
 			</li>

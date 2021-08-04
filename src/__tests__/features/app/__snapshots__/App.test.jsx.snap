@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing App screen component should render correctly 1`] = `
+"<BrowserRouter data-testid=\\"router\\">
+  <Route path=\\"/login\\" component={[Function: Login]} data-testid=\\"login-screen-route\\" />
+  <Header data-testid=\\"header\\" />
+  <div className=\\"row\\" style={{...}}>
+    <nav id=\\"sidenav\\" className=\\"col s0 m3 l2 white\\" style={{...}}>
+      <SideNavBar />
+    </nav>
+    <main id=\\"main\\" className=\\"col s12 m9 l10\\">
+      <div className=\\"container\\">
+        <Route path=\\"/\\" component={[Function: App]}>
+          <Route exact={true} path=\\"/\\" component={[Function: Home]} data-testid=\\"home-screen-route\\" />
+          <Route path=\\"/companies\\" data-testid=\\"companies-screen-route\\">
+            <Route exact={true} path=\\"/companies\\" component={[Function: Companies]} data-testid=\\"companies-screen-route\\" />
+            <Route exact={true} path=\\"/companies/form\\" component={[Function: CompanyForm] { propTypes: { id: [Function: bound checkType] { isRequired: [Function: bound checkType] } } }} data-testid=\\"company-form-route\\" />
+          </Route>
+          <Route path=\\"/users\\" data-testid=\\"users-screen-route\\">
+            <Route exact={true} path=\\"/users\\" component={[Function: Users]} data-testid=\\"users-screen-route\\" />
+            <Route exact={true} path=\\"/users/form\\" component={[Function: UserForm] { propTypes: { id: [Function: bound checkType] { isRequired: [Function: bound checkType] } } }} data-testid=\\"users-screen-route\\" />
+          </Route>
+          <Route path=\\"/projects\\" data-testid=\\"projects-screen-route\\">
+            <Route exact={true} path=\\"/projects\\" component={[Function: Projects]} data-testid=\\"projects-screen-route\\" />
+            <Route exact={true} path=\\"/projects/form\\" component={[Function: ProjectForm] { propTypes: { id: [Function: bound checkType] { isRequired: [Function: bound checkType] } } }} data-testid=\\"project-form-screen-route\\" />
+          </Route>
+          <Route path=\\"/sprints\\" data-testid=\\"sprints-screen-route\\">
+            <Route exact={true} path=\\"/sprints\\" component={[Function: Sprints]} data-testid=\\"sprints-screen-route\\" />
+            <Route exact={true} path=\\"/sprints/form\\" component={[Function: SprintForm] { propTypes: { id: [Function: bound checkType] { isRequired: [Function: bound checkType] } } }} data-testid=\\"sprints-form-screen-route\\" />
+          </Route>
+          <Route path=\\"/tasks\\" data-testid=\\"tasks-screen-route\\">
+            <Route exact={true} path=\\"/tasks\\" component={[Function: Task]} data-testid=\\"tasks-screen-route\\" />
+          </Route>
+        </Route>
+      </div>
+    </main>
+  </div>
+</BrowserRouter>"
+`;

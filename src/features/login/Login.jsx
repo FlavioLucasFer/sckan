@@ -30,10 +30,7 @@ function Login() {
 				className="col s12 m6 l5 teal right-col">
 				<div className="row" id='login-card-row'
 					style={{ display: 'flex', justifyContent: 'center' }}>
-					<div className="col" id='login-card-col'  
-						s={12}
-						l={11}
-						xl={8}
+					<div className="col s12 l11 xl8" id='login-card-col'  
 						style={{ margin: 0 }}>
 						<CardPanel id='login-card'>
 							<TextInput {...userIndentification}

@@ -42,6 +42,7 @@ function Collection(props) {
 		<ul className="collection">
 			{items.map((e, i) => (
 				<li key={i} 
+					id={i}
 					className={`collection-item ${isActive(i) && 'active'}`}
 					onClick={() => handleListItemClick(i)}>
 					{renderId(e, i)}
