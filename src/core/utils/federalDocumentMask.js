@@ -1,3 +1,5 @@
+'use strict';
+
 function federalDocumentMask(value) {
 	value = value.replace(/\D/g, '');
 

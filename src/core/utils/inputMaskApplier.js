@@ -1,3 +1,5 @@
+'use strict';
+
 import cpnjMask from "./cnpjMask";
 import cpfMask from "./cpfMask";
 import federalDocumentMask from "./federalDocumentMask";

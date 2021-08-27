@@ -1,3 +1,5 @@
+'use strict';
+
 function validateCPF(cpf) {
 	if (typeof cpf !== "string") 
 		return false;

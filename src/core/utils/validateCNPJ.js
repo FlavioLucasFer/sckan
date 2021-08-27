@@ -1,3 +1,5 @@
+'use strict';
+
 function validateCNPJ(value) {
 	const match = value.toString().match(/\d/g);
 	const numbers = Array.isArray(match) ? match.map(Number) : [];
