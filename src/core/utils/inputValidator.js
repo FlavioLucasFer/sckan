@@ -1,3 +1,5 @@
+'use strict';
+
 import validateEmail from "./validateEmail";
 import validateCPF from "./validateCPF";
 import validateCNPJ from "./validateCNPJ";
