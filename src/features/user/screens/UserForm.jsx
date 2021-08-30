@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 import FormScreen from 'core/components/FormScreen';
 import useFormInput from 'core/hooks/useFormInput';
 import TextInput from 'core/components/TextInput';
 import Select from 'core/components/Select';
+import { USER_ROUTE } from 'core/utils/routes';
 
-UserForm.propTypes = {
-	id: PropTypes.string,
-};
+import userService from 'features/user/domain/service';
+import userModel from 'features/user/domain/model';
 
-function UserForm({ id }) {
+import { setUsers } from 'redux/reducers/users';
+
+function UserForm() {
+	const dispatch = useDispatch();
+	const location = useLocation();
+	
+	const [user, setUser] = useState({});
 	const name = useFormInput();
 	const login = useFormInput();
 	const password = useFormInput();
@@ -18,6 +26,29 @@ function UserForm({ id }) {
 	const companyPosition = useFormInput();
 	const company = useFormInput();
 	const [passwordIsVisible, setPasswordIsVisible] = useState(false);
+	
+	const companies = useSelector(state => state.companies.value);
+
+	useEffect(() => {
+		if (location.state) {
+			function fakeTarget(value) {
+				return {
+					target: {
+						value,
+					},
+				};
+			}
+			
+			const user = location.state.data;
+			setUser(user);
+			
+			name.onChange(fakeTarget(user.name));
+			login.onChange(fakeTarget(user.login));
+			cpf.onChange(fakeTarget(user.cpf));
+			companyPosition.onChange(fakeTarget(user.companyPosition));
+			company.onChange(fakeTarget(user.company));
+		}
+	}, []);
 
 	const companyPositions = [
 		{ title: 'Scrum Master', value: 'SM' },
@@ -30,9 +61,35 @@ function UserForm({ id }) {
 		setPasswordIsVisible(!passwordIsVisible);
 	}
 
+	async function handleSave() {
+		const User = userModel(
+			user.id,
+			name.value,
+			login.value,
+			password.value,
+			cpf.value,
+			companyPosition.value,
+			company.value,
+		);
+
+		try {
+			await userService.save(User);
+			await refreshUsers();
+		} catch (err) {
+			console.log('err:', err);
+		}
+	}
+
+	async function refreshUsers() {
+		const users = await userService.find();
+		dispatch(setUsers(users));
+	}
+
 	return (
 		<FormScreen title="User"
-			id={id}>
+			id={user.id}
+			backRoute={USER_ROUTE}
+			onSave={handleSave}>
 			<div className="row">
 				<TextInput {...name}
 					title="Name"
@@ -68,9 +125,9 @@ function UserForm({ id }) {
 					className="col s12 m6"
 					type={passwordIsVisible ? 'text' : 'password'}
 					icon={passwordIsVisible ? 'visibility_off' : 'visibility'}
-					validate
-					mandatory
-					required
+					validate={!user}
+					mandatory={!user}
+					required={!user}
 					iconClick={handlePasswordVisilityIconClick} />
 			</div>
 
@@ -85,7 +142,9 @@ function UserForm({ id }) {
 				<Select {...company}
 					title="Company"
 					className="col s12 m6 l4"
-					values={[]}
+					values={companies}
+					valueAs="id"
+					titleAs="companyName"
 					defaultOption="Select a company"
 					icon="business" />
 			</div>

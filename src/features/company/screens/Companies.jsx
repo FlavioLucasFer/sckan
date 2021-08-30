@@ -1,47 +1,57 @@
 import './Companies.css';
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import ListScreen from 'core/components/ListScreen';
 import { COMPANY_FORM_ROUTE } from 'core/utils/routes';
 
+import companyService from 'features/company/domain/service';
+
+import { setCompanies } from 'redux/reducers/companies';
+
 function Companies() {
-	const [data, setData] = useState([
-		{
-			id: 1213,
-			companyName: 'Testing',
-			tradingName: 'Hard code test',
-			federalDocument: '111.111.111-11',
-			email: 'mail@email.com',
-		}, {
-			companyName: 'bbb',
-			id: 1345,
-			federalDocument: '131.131.131-13',
-			email: 'amail123@email.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm',
-			tradingName: 'absdbstsh',
-		}, {
-			companyName: 'ssahsas',
-			id: 1818,
-			federalDocument: '121.121.121-12',
-			email: 'mail123@email.com',
-			tradingName: 'Hash',
-		},
-	]);
+	const dispatch = useDispatch();
+	const companies = useSelector(state => state.companies.value);
 
 	const fields = [
-		{title: 'Trading name', field: 'tradingName'},
-		{title: 'Federal document', field: 'federalDocument'},
-		{title: 'E-mail', field: 'email'},
+		{ title: 'Company name', field: 'companyName' },
+		{ title: 'Trading name', field: 'tradingName' },
+		{ title: 'Federal document', field: 'federalDocument' },
+		{ title: 'E-mail', field: 'email' },
 	];
+
+	useEffect(async () => {
+		await getCompanies();
+	}, []);
+
+	async function getCompanies() {
+		try {
+			const companies = await companyService.find();
+			dispatch(setCompanies(companies));
+		} catch (err) {
+			console.log('err:', err);
+		}
+	}
+
+	async function handleRemove(id) {
+		try {
+			await companyService.remove(id);
+			await getCompanies();
+		} catch (err) {
+			console.log('err:', err);
+		}
+	}
 
 	return (
 		<ListScreen title="Companies"
 			singularTitle="Company"
-			data={data}
+			data={companies}
 			fields={fields}
 			identifierField="companyName"
-			pagesQuantity={3}
+			itemsQuantityByPage={10}
 			formRoute={COMPANY_FORM_ROUTE}
-			onRefresh={null} />
+			onRefresh={getCompanies}
+			onRemove={handleRemove} />
 	);
 }
 

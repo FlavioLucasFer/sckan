@@ -1,23 +1,75 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
+import FormScreen from 'core/components/FormScreen';
 import useFormInput from 'core/hooks/useFormInput';
 import TextInput from 'core/components/TextInput';
-import FormScreen from 'core/components/FormScreen';
+import { COMPANY_ROUTE } from 'core/utils/routes';
 
-CompanyForm.propTypes = {
-	id: PropTypes.string,
-}
+import companyService from 'features/company/domain/service';
+import companyModel from 'features/company/domain/model';
 
-function CompanyForm({ id }) {
+import { setCompanies } from 'redux/reducers/companies';
+
+function CompanyForm() {
+	const dispatch = useDispatch();
+	const location = useLocation();
+
+	const [company, setCompany] = useState({});
 	const companyName = useFormInput();
 	const tradingName = useFormInput();
 	const federalDocument = useFormInput();
 	const email = useFormInput();
+
+	useEffect(() => {
+		if (location.state) {
+			function fakeTarget(value) {
+				return {
+					target: {
+						value,
+					},
+				};
+			}
+
+			const company = location.state.data;
+			setCompany(company);
+
+			companyName.onChange(fakeTarget(company.companyName));
+			tradingName.onChange(fakeTarget(company.tradingName));
+			federalDocument.onChange(fakeTarget(company.federalDocument));
+			email.onChange(fakeTarget(company.email));
+		}
+	}, []);
 	
+	async function handleSave() {
+		const Company = companyModel(
+			company.id,
+			companyName.value,
+			tradingName.value,
+			federalDocument.value,
+			email.value,
+		);
+
+		try {
+			await companyService.save(Company);
+			await refreshCompanies();
+		} catch (err) {
+			console.log('err:', err);
+		}
+	}
+
+	async function refreshCompanies() {
+		const companies = await companyService.find();
+		dispatch(setCompanies(companies));
+	}
+
+
 	return (
 		<FormScreen title="Company"
-			id={id}>
+			id={company.id}
+			backRoute={COMPANY_ROUTE}
+			onSave={handleSave}>
 			<div className="row">
 				<TextInput {...companyName}
 					title="Company name"
