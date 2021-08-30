@@ -1,0 +1,27 @@
+.task-card {
+	padding: 5px;
+}
+
+.task-card>h6 {
+	margin-top: 5px;
+}
+
+.task-card-footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	margin-top: 25px;
+}
+
+.task-card-footer>div {
+	display: flex;
+	align-items: center;
+}
+
+.task-card-footer>div>label {
+	display: block;
+	margin-left: 5px;
+	margin-top: 1px;
+	font-size: 15px;
+}
