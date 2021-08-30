@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 Modal.propTypes = {
 	title: PropTypes.string.isRequired,
 	className: PropTypes.string,
+	contentClassName: PropTypes.string,
 	actions: PropTypes.arrayOf(Object),
-	options: PropTypes.object,
 	children: PropTypes.element,
 };
 
@@ -14,14 +14,16 @@ function Modal(props) {
 	const {
 		title,
 		className,
+		contentClassName,
 		actions,
-		options,
 		children,
 		...rest
 	} = props;
 
 	useEffect(() => {
-		M.Modal.init(document.querySelectorAll('.modal'), options);
+		M.Modal.init(document.querySelectorAll('.modal'), {
+			dismissible: false,
+		});
 	}, []);
 
 	function renderFooter() {
@@ -45,8 +47,12 @@ function Modal(props) {
 	return (
 		<div {...rest}
 			className={`modal ${className || ''} ${actions ? 'modal-fixed-footer' : ''}`}>
-			<div className="modal-content">
-				<h5>{title}</h5>
+			<div className={`modal-content ${contentClassName || ''}`}>
+				{title ? 
+					<h5>{title}</h5>
+				:
+					null
+				}
 				{children}
 			</div>
 			{renderFooter()}

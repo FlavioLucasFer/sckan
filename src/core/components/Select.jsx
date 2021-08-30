@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from './Icon';
+import Icon from 'core/components/Icon';
 
 Select.propTypes = {
 	title: PropTypes.string.isRequired,
 	className: PropTypes.string,
+	value: PropTypes.any,
 	values: PropTypes.arrayOf(Object).isRequired,
 	defaultOption: PropTypes.string,
 	icon: PropTypes.string,
 	options: PropTypes.object,
+	valueAs: PropTypes.string,
+	titleAs: PropTypes.string,
 };
 
 function Select(props) {
@@ -20,25 +23,29 @@ function Select(props) {
 		defaultOption, 
 		icon,
 		options,
+		valueAs,
+		titleAs,
 		...rest 
 	} = props;
 
 	useEffect(() => {
 		const elems = document.querySelectorAll('select');
 		M.FormSelect.init(elems, options);
-	}, []);
+	}, [values, props.value]);
 	
 	function renderOptions() {
 		if (values.length <= 0)
 			return <option value="" disabled selected>No data found!</option>
 
 		return values.map((e, i) => (
-			<option key={i} value={e.value}>{e.title}</option>
+			<option key={i} value={valueAs ? e[valueAs] : e.value}>
+				{titleAs ? e[titleAs] : e.title}
+			</option>
 		));
 	}
 
 	function renderDefaultOption() {
-		if (!defaultOption || values.length <= 0)
+		if (!defaultOption || values.length === 0)
 			return null;
 
 		return (

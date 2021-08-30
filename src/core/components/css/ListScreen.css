@@ -10,6 +10,10 @@
 	padding: 0 !important;
 }
 
+.filters-card {
+	padding: 10px;
+}
+
 .card-container {
 	height: 70vh;
 }
@@ -31,13 +35,13 @@
 	top: 0px;
 }
 
-.actions>i {
+.action {
 	padding: 10px;
 	text-align: center;
 	cursor: pointer;
 }
 
-.actions>i:hover {
+.action:hover {
 	background-color: rgba(0, 0, 0, .1);
 }
 
@@ -51,4 +55,13 @@
 
 .item-informations-container>p>span {
 	font-weight: bold;
+}
+
+.refresh-button {
+	padding: 5px;
+	border-radius: 50%;
+}
+
+.refresh-button:hover {
+	background-color: rgba(0, 0, 0, .1);
 }

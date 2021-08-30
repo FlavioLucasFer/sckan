@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import $ from 'jquery';
 import { uniqueId } from 'lodash';
 
-import Icon from './Icon';
-import inputValidator from 'core/utils/inputValidator';
 import inputMaskApplier from 'core/utils/inputMaskApplier';
+import inputValidator from 'core/utils/inputValidator';
+import Icon from 'core/components/Icon';
 
 TextInput.propTypes = {
 	title: PropTypes.string,
@@ -48,8 +48,12 @@ function TextInput(props) {
 	const [helperMessage, setHelperMessage] = useState(mandatory ? '* This field is mandatory' : '');
 
 	useEffect(() => {
+		M.updateTextFields();
+	}, []);
+
+	useEffect(() => {
 		if (validate && firstFocus) {
-			if (!mandatory && value.trim() === '');
+			if (!mandatory && (value && value.toString().trim() === ''));
 			else {
 				$(`#${id}`).removeClass('valid invalid');
 				$(`#${id}`).addClass(isValid() ? 'valid' : 'invalid');
@@ -68,7 +72,7 @@ function TextInput(props) {
 		if (!validate)
 			return true;
 
-		else if (mandatory && value.trim() === '') {
+		else if (mandatory && (value && value.toString().trim() === '')) {
 			helperMessage = '* This field is mandatory';
 			isValid = false;
 		}
