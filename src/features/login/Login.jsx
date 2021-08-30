@@ -1,52 +1,89 @@
 import './Login.css';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import useFormInput from 'core/hooks/useFormInput';
-import Button from 'core/components/Button';
 import CardPanel from 'core/components/CardPanel';
 import TextInput from 'core/components/TextInput';
+import Button from 'core/components/Button';
+import isAdmin from 'core/helpers/isAdmin';
 import { HOME_ROUTE } from 'core/utils/routes';
+
+import projectService from 'features/project/domain/service';
+import companyService from 'features/company/domain/service';
+import userService from 'features/user/domain/service';
+
+import { setCurrentScreen } from 'redux/reducers/currentScreen';
+import { setProductOwners } from 'redux/reducers/productOwners';
+import { setScrumMasters } from 'redux/reducers/scrumMasters';
+import { setDevelopers } from 'redux/reducers/developers';
+import { setCompanies } from 'redux/reducers/companies';
+import { setProjects } from 'redux/reducers/projects';
+import { setCompany } from 'redux/reducers/company';
+import { setUsers } from 'redux/reducers/users';
+import { setUser } from 'redux/reducers/user';
 
 function Login() {
 	const userIndentification = useFormInput();
 	const userPassword = useFormInput();
-  const { push } = useHistory();
 
-  function handleSignIn() {
-    push(HOME_ROUTE);
+	const dispatch = useDispatch();
+	const { push } = useHistory();
+
+  async function handleSignIn() {
+		try {
+			const data = await userService.signIn(userIndentification.value, userPassword.value);
+
+			if (data.auth) {
+				const { user } = data;
+				user.token = data.token;
+
+				dispatch(setUser(user));
+
+				await getCompany(user.company);
+
+				push(HOME_ROUTE);
+				dispatch(setCurrentScreen(HOME_ROUTE));
+			} else {
+				console.log('err:', data.message);
+			}
+		} catch (err) {
+			console.log('err:', err);			
+		}
   }
 
+	async function getCompany(id) {
+		try {
+			const company = await companyService.findById(id);
+			dispatch(setCompany(company));
+		} catch (err) {
+			throw err;
+		}
+	}
+
 	return (
-		<section id="main-row"
-			className="row"
+		<section className="row"
 			style={{ height: '100%' }}>
-			<div id="left-col" 
-				className="col s12 m6 l7 left-col" >
+			<div className="col s12 m6 l7 left-col" >
 				<h1 className="app-name" data-testid="app-name">Sckan</h1>
 			</div>
 
-			<div id="right-col"
-				className="col s12 m6 l5 teal right-col">
-				<div className="row" id='login-card-row'
-					style={{ display: 'flex', justifyContent: 'center' }}>
-					<div className="col s12 l11 xl8" id='login-card-col'  
-						style={{ margin: 0 }}>
-						<CardPanel id='login-card'>
+			<div className="col s12 m6 l5 teal right-col">
+				<div className="row flex h-center">
+					<div className="col s12 l11 xl8 no-margin">
+						<CardPanel>
 							<TextInput {...userIndentification}
-								id='user-identification-input'
-								data-testid='user-identification-input'
-								title='User identification'
+								title="User identification"
 								className="col s12"
 								validate
 								mandatory
 								required />
 
 							<TextInput {...userPassword}
-								id='user-password-input'
-								data-testid='user-password-input'
-								title='Password'
 								className="col s12"
+								title="Password"
+								type="password"
 								password
 								validate
 								mandatory
