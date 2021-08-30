@@ -1,0 +1,79 @@
+.title-input {
+	border-width: 0px !important;
+	font-size: 24px !important;
+}
+
+.title-input:focus {
+	box-shadow: 0px 0px 0px 0px transparent !important;
+	border-right: 3px solid #1de9b6 !important;
+}
+
+.title-input:disabled {
+	color: #000 !important;
+}
+
+.planned-size-input {
+	background-color: #e7e7e7 !important;
+	padding: 5px !important;
+	width: 50px !important;
+	border-radius: 5px !important;
+	border-width: 0px !important;
+	text-align: center;
+	font-size: 18px;
+}
+
+.planned-size-input:focus {
+	box-shadow: 0px 0px 0px 0px transparent !important;
+}
+
+.description-input {
+	background-color: #e7e7e7 !important;
+	padding: 10px !important;
+	width: 100% !important;
+	height: 100px;
+	border-radius: 5px !important;
+	border-width: 0px !important;
+	font-size: 14px;
+	resize: none;
+	outline: none;
+}
+
+.description-input:focus {
+	box-shadow: 0px 0px 0px 0px transparent !important;
+}
+
+.label {
+	display: block;
+	color: #4b4b4b !important;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 5px !important;
+}
+
+.preview {
+	background-color: #b1b1b1;
+	padding: 15px;
+}
+
+.preview>label {
+	color: #313131 !important;
+}
+
+.preview-card {
+	text-align: left;
+	width: 300px;
+}
+
+.remove-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 28px;
+	border-radius: 50%;
+	cursor: pointer;
+	padding: 5px;
+}
+
+.remove-button:hover {
+	background-color: rgba(63, 30, 30, 0.1);
+}
