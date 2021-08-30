@@ -1,34 +1,53 @@
 import './css/FormScreen.css';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import ConfirmActionModal from 'core/modals/ConfirmActionModal';
 import CardPanel from 'core/components/CardPanel';
 import TextInput from 'core/components/TextInput';
 import Button from 'core/components/Button';
-import ConfirmActionModal from 'core/modals/ConfirmActionModal';
+
+import { setCurrentScreen } from 'redux/reducers/currentScreen';
 
 FormScreen.propTypes = {
 	title: PropTypes.string.isRequired,
+	backRoute: PropTypes.string.isRequired,
 	id: PropTypes.string,
 	children: PropTypes.element,
+	onSave: PropTypes.func,
 }
 
 function FormScreen(props) {
 	const { 
 		title,
+		backRoute,
 		id,
+		onSave,
 		children,
 	} = props;
 
-	const { goBack } = useHistory();
+	const dispatch = useDispatch();
+	const { push } = useHistory();
 
-	function handleSave() {
-		goBack();
+	async function handleSave() {
+		if (onSave) {
+			try {
+				await onSave();
+
+				goBack();
+			} catch (err) {
+				throw err;
+			}
+		} else {
+			goBack();
+		}
 	}
 
-	function handleDiscard() {
-		goBack();
+	function goBack() {
+		push(backRoute);
+		dispatch(setCurrentScreen(backRoute));
 	}
 
 	return (
@@ -85,7 +104,7 @@ function FormScreen(props) {
 				onConfirm={handleSave} />
 			<ConfirmActionModal id="confirm-discard-modal"
 				title="Are you sure you want to discard changes?"
-				onConfirm={handleDiscard} />
+				onConfirm={goBack} />
 		</section>
 	);
 }

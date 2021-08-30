@@ -1,25 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 SearchInput.propTypes = {
-	onChange: PropTypes.func,
+	onClear: PropTypes.func,
 };
 
-function SearchInput({ onChange }) {
-	const [value, setValue] = useState('');
-
-	function handleChange(e) {
-		const { value } = e.target;
-		setValue(value);
-
-		if (onChange) {
-			onChange(value);
-		}
-	}
-
-	function handleClear() {
-		setValue('');
-	}
+function SearchInput(props) {
+	const { 
+		onClear, 
+		...rest
+	} = props;
 
 	return (
 		<div className="nav-wrapper grey lighten-5"
@@ -27,18 +17,17 @@ function SearchInput({ onChange }) {
 			style={{ borderRadius: '5px', lineHeight: '50px' }}>
 			<form onSubmit={e => e.preventDefault()}>
 				<div className="input-field">
-					<input className="grey lighten-5"
+					<input {...rest}
+						className="grey lighten-5"
 						id="search" 
-						type="search" 
-						value={value}
-						onChange={handleChange} />
+						type="search" />
 					<label className="label-icon vertical-center-content" htmlFor="search">
 						<i className="material-icons-round">
 							search
 						</i>
 					</label>
 					<i className="material-icons vertical-center-content"
-						onClick={handleClear}>
+						onClick={onClear}>
 						cancel
 					</i>
 				</div>

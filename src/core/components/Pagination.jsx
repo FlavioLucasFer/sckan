@@ -4,11 +4,17 @@ import PropTypes from 'prop-types';
 
 Pagination.propTypes = {
 	pagesQuantity: PropTypes.number.isRequired,
+	goNext: PropTypes.func,
+	goPrevious: PropTypes.func,
+	onPageClick: PropTypes.func,
 };
 
 function Pagination(props) {
 	const {
 		pagesQuantity,
+		goNext,
+		goPrevious,
+		onPageClick,
 	} = props;
 
 	const [activePage, setActivePage] = useState(1);
@@ -20,7 +26,7 @@ function Pagination(props) {
 			listItems.push(
 				<li key={i} 
 					className={`${activePage === i ? 'active active-page' : 'waves-effect'}`}
-					onClick={() => setActivePage(i)}>
+					onClick={() => handlePageClick(i)}>
 					<a>{i}</a>
 				</li>
 			);
@@ -29,11 +35,24 @@ function Pagination(props) {
 		return listItems;
 	}
 
+	function handlePageClick(page) {
+		if (onPageClick)
+			onPageClick(page);
+
+		setActivePage(page);
+	}
+
 	function handleClickOnNextPage() {
+		if (goNext)
+			goNext();
+
 		setActivePage(activePage + 1);
 	}
 	
 	function handleClickOnPreviousPage() {
+		if (goPrevious)
+			goPrevious();
+
 		setActivePage(activePage - 1);
 	}
 

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { uniqueId } from 'lodash';
 
-import Icon from './Icon';
+import Icon from 'core/components/Icon';
 
 TextArea.propTypes = {
 	title: PropTypes.string,

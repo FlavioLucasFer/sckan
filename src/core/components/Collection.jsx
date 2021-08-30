@@ -17,16 +17,6 @@ function Collection(props) {
 
 	const [activeItem, setActiveItem] = useState(-1);
 
-	function renderId(item, index) {
-		if (!item.id) {
-			return;
-		}
-
-		return (
-			<span className={`item-id ${!isActive(index) && 'grey-text text-darken-3'}`} >#{item.id}</span>
-		);
-	}
-
 	function isActive(index) {
 		return index === activeItem;
 	}
@@ -45,7 +35,6 @@ function Collection(props) {
 					id={i}
 					className={`collection-item ${isActive(i) && 'active'}`}
 					onClick={() => handleListItemClick(i)}>
-					{renderId(e, i)}
 					{e[identifier]}
 				</li>
 			))}
