@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing ConfirmActionModal core modal component should render correctly 1`] = `"<Modal id=\\"confirm-action-modal-test\\" title=\\"confirm action modal test\\" actions={{...}} className=\\"confirm-action-modal-height\\" />"`;
+
+exports[`Testing ConfirmActionModal core modal component should render correctly 2`] = `"<Modal id=\\"confirm-action-modal-test\\" title=\\"testing\\" actions={{...}} className=\\"confirm-action-modal-height\\" />"`;

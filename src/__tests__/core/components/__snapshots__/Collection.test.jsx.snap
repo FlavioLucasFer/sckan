@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Collection core component should render correctly 1`] = `
+"<ul className=\\"collection\\">
+  <li id={0} className=\\"collection-item false\\" onClick={[Function: onClick]}>
+    <span className=\\"item-id grey-text text-darken-3\\">
+      #
+      1213
+    </span>
+    Testing
+  </li>
+  <li id={1} className=\\"collection-item false\\" onClick={[Function: onClick]}>
+    <span className=\\"item-id grey-text text-darken-3\\">
+      #
+      1345
+    </span>
+    bbb
+  </li>
+  <li id={2} className=\\"collection-item false\\" onClick={[Function: onClick]}>
+    <span className=\\"item-id grey-text text-darken-3\\">
+      #
+      1818
+    </span>
+    ssahsas
+  </li>
+</ul>"
+`;

@@ -1,7 +1,8 @@
-import './SideNavBar.css';
+import './css/SideNavBar.css';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { 
 	COMPANY_ROUTE, 
@@ -12,8 +13,13 @@ import {
 	USER_ROUTE,
 } from 'core/utils/routes';
 
+import isScrumMaster from 'core/helpers/isScrumMaster';
+import isAdmin from 'core/helpers/isAdmin';
 import Icon from 'core/components/Icon';
-import LogOutModal, { id as logOutModalId } from '../modals/LogOutModal';
+
+import LogOutModal from 'features/app/modals/LogOutModal';
+
+import { setCurrentScreen } from 'redux/reducers/currentScreen';
 
 const Divider = () => <li className="divider"></li>;
 
@@ -25,6 +31,7 @@ SideNavItem.propTypes = {
 };
 
 function SideNavItem(props) {
+	const dispatch = useDispatch();
 	const { push } = useHistory();
 	const { pathname } = useLocation();
 
@@ -37,7 +44,7 @@ function SideNavItem(props) {
 	} = props;
 
 	const [iconColor, setIconColor] = useState('white-text');
-	const isCurrentRoute = pathname === route;
+	const isCurrentRoute = pathname === route || pathname === `${route}/form`;
 
 	function handleMouseIn() {
 		setIconColor('grey-text text-lighten-1');
@@ -48,8 +55,10 @@ function SideNavItem(props) {
 	}
 
 	function handleClick() {
-		if (route)
+		if (route) {
 			push(route);
+			dispatch(setCurrentScreen(route));
+		}
 	}
 
 	return (
@@ -86,6 +95,8 @@ function SideNavItem(props) {
 }
 
 function SideNavBar() {
+	const user = useSelector(state => state.user.value);
+
 	return (
 		<ul id="sidenav" data-testid="sidenav">
 			<SideNavItem route={HOME_ROUTE}
@@ -93,41 +104,57 @@ function SideNavBar() {
 				icon="home"
 				data-testid="home-sidenav-item"
 				first />
+			
+			{isAdmin(user) ?
+				<SideNavItem route={USER_ROUTE}
+					label="Users"
+					icon="manage_accounts"
+					data-testid="users-sidenav-item" />
+			:
+				null
+			}
 
-			<SideNavItem route={USER_ROUTE}
-				label="Users"
-				icon="manage_accounts"
-				data-testid="users-sidenav-item" />
-
-			<SideNavItem route={COMPANY_ROUTE}
-				label="Companies"
-				icon="business"
-				data-testid="companies-sidenav-item" />
+			{isAdmin(user) ?
+				<SideNavItem route={COMPANY_ROUTE}
+					label="Companies"
+					icon="business"
+					data-testid="companies-sidenav-item" />
+			:
+				null
+			}
 
 			<SideNavItem route={TASK_ROUTE}
 				label="Tasks"
 				icon="task"
 				data-testid="tasks-sidenav-item" />
 
-			<SideNavItem route={SPRINT_ROUTE}
-				label="Sprints"
-				icon="wysiwyg"
-				data-testid="sprints-sidenav-item" />
+			{isAdmin(user) || isScrumMaster(user) ?
+				<SideNavItem route={SPRINT_ROUTE}
+					label="Sprints"
+					icon="wysiwyg"
+					data-testid="sprints-sidenav-item" />
+			:
+				null
+			}
 
-			<SideNavItem route={PROJECT_ROUTE}
-				label="Projects"
-				icon="source"
-				data-testid="projects-sidenav-item" />
+			{isAdmin(user) || isScrumMaster(user) ?
+				<SideNavItem route={PROJECT_ROUTE}
+					label="Projects"
+					icon="source"
+					data-testid="projects-sidenav-item" />
+			:
+				null
+			}
 
 			<Divider />
 
-			<a className="modal-trigger" href={`#${logOutModalId}`}>
+			<a className="modal-trigger" href="#logout-modal">
 				<SideNavItem label="Log-out"
 					icon="logout"
 					data-testid="logout-sidenav-item" />
 			</a>
 			
-			<LogOutModal />
+			<LogOutModal id="logout-modal" />
 		</ul>
 	);
 }

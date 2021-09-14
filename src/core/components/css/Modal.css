@@ -1,0 +1,12 @@
+.modal-content>* {
+	color: #000;
+}
+
+.modal-footer {
+	line-height: 50px !important;
+	padding: 0 !important;
+}
+
+.footer-button {
+	margin: 0px 5px !important;
+}

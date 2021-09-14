@@ -1,0 +1,75 @@
+#container {
+	position: relative;
+}
+
+.feature-icon {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	font-size: 190px !important;
+	color: #eee;
+	cursor: default;
+	
+	transition: color 1s;
+	animation: icon-animation-out ease-in-out;
+}
+
+@media screen and (max-width: 1440px) {
+	.feature-icon {
+		font-size: 170px !important;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.feature-icon {
+		font-size: 160px !important;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.feature-icon {
+		font-size: 120px !important;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.feature-icon {
+		font-size: 190px !important;
+	}
+}
+
+@media screen and (max-width: px) {
+	.feature-icon {
+		font-size: 160px !important;
+	}
+}
+
+#container:hover .feature-icon {
+	color: #bdbdbd;
+	transition: color 1s;
+	animation: icon-animation-in ease-in-out;
+}
+
+@keyframes icon-animation-in {
+	from {
+		color: #eee;
+	}
+	to {
+		color: #bdbdbd;
+	}
+}
+
+@keyframes icon-animation-out {
+	from {
+		color: #bdbdbd;
+	}
+	to {
+		color: #eee;
+	}
+}
+
+.feature-card-title {
+	font-size: 28px !important;
+}
+

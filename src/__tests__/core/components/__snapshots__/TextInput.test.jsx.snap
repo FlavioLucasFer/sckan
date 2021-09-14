@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing TextInput core component should render correctly 1`] = `
+"<div className=\\"input-field undefined\\">
+  <input id=\\"text-input-1\\" value={[undefined]} className={[undefined]} onFocus={[Function: handleFocus]} onBlur={[Function: handleBlur]} />
+  <label id=\\"text-input-label-2\\" htmlFor=\\"text-input-1\\" />
+</div>"
+`;
+
+exports[`Testing TextInput core component should render correctly 2`] = `
+"<div className=\\"input-field teal\\">
+  <Icon id=\\"text-input-icon-7\\" className=\\"prefix undefined\\" color=\\"grey-text\\" onClick={[undefined]}>
+    visibility
+  </Icon>
+  <input id=\\"text-input-5\\" value=\\"test@mail.com\\" className=\\"grey-text\\" onFocus={[Function: handleFocus]} onBlur={[Function: handleBlur]} />
+  <label id=\\"text-input-label-6\\" htmlFor=\\"text-input-5\\">
+    textinput test
+  </label>
+</div>"
+`;
+
+exports[`Testing TextInput core component should render correctly 3`] = `
+"<div className=\\"input-field teal\\">
+  <Icon id=\\"text-input-icon-11\\" className=\\"prefix undefined\\" color=\\"grey-text\\" onClick={[undefined]}>
+    visibility
+  </Icon>
+  <input id=\\"text-input-9\\" value=\\"\\" className=\\"grey-text\\" onFocus={[Function: handleFocus]} onBlur={[Function: handleBlur]} />
+  <label id=\\"text-input-label-10\\" htmlFor=\\"text-input-9\\">
+    textinput test
+  </label>
+</div>"
+`;
+
+exports[`Testing TextInput core component should render correctly 4`] = `
+"<div className=\\"input-field teal\\">
+  <Icon id=\\"text-input-icon-19\\" className=\\"prefix undefined\\" color=\\"grey-text\\" onClick={[undefined]}>
+    visibility
+  </Icon>
+  <input id=\\"text-input-17\\" value=\\"\\" className=\\"grey-text\\" onFocus={[Function: handleFocus]} onBlur={[Function: handleBlur]} />
+  <label id=\\"text-input-label-18\\" htmlFor=\\"text-input-17\\">
+    textinput test
+  </label>
+  <span id=\\"text-input-helper-text-20\\" className=\\"helper-text bold-text\\" data-error=\\"testing error\\" data-success=\\"testing success\\">
+    * This field is mandatory
+  </span>
+</div>"
+`;
+
+exports[`Testing TextInput core component should render correctly 5`] = `
+"<div className=\\"input-field teal\\">
+  <Icon id=\\"text-input-icon-23\\" className=\\"prefix undefined\\" color=\\"grey-text\\" onClick={[undefined]}>
+    visibility
+  </Icon>
+  <input id=\\"text-input-21\\" value=\\"12312312312\\" className=\\"grey-text\\" onFocus={[Function: handleFocus]} onBlur={[Function: handleBlur]} />
+  <label id=\\"text-input-label-22\\" htmlFor=\\"text-input-21\\">
+    textinput test
+  </label>
+  <span id=\\"text-input-helper-text-24\\" className=\\"helper-text bold-text\\" data-error=\\"testing error\\" data-success=\\"testing success\\">
+    * This field is mandatory
+  </span>
+</div>"
+`;
+
+exports[`Testing TextInput core component should render correctly 6`] = `
+"<div className=\\"input-field teal\\">
+  <Icon id=\\"text-input-icon-27\\" className=\\"prefix undefined\\" color=\\"grey-text\\" onClick={[undefined]}>
+    visibility
+  </Icon>
+  <input id=\\"text-input-25\\" value=\\"47057888007\\" className=\\"grey-text\\" onFocus={[Function: handleFocus]} onBlur={[Function: handleBlur]} />
+  <label id=\\"text-input-label-26\\" htmlFor=\\"text-input-25\\">
+    textinput test
+  </label>
+  <span id=\\"text-input-helper-text-28\\" className=\\"helper-text bold-text\\" data-error=\\"testing error\\" data-success=\\"testing success\\">
+    * This field is mandatory
+  </span>
+</div>"
+`;
+
+exports[`Testing TextInput core component should render correctly 7`] = `
+"<div className=\\"input-field teal\\">
+  <Icon id=\\"text-input-icon-31\\" className=\\"prefix undefined\\" color=\\"grey-text\\" onClick={[undefined]}>
+    visibility
+  </Icon>
+  <input id=\\"text-input-29\\" value=\\"\\" className=\\"grey-text\\" onFocus={[Function: handleFocus]} onBlur={[Function: handleBlur]} />
+  <label id=\\"text-input-label-30\\" htmlFor=\\"text-input-29\\">
+    textinput test
+  </label>
+  <span id=\\"text-input-helper-text-32\\" className=\\"helper-text bold-text\\" data-error=\\"testing error\\" data-success=\\"testing success\\">
+    * This field is mandatory
+  </span>
+</div>"
+`;
+
+exports[`Testing TextInput core component should render correctly 8`] = `
+"<div className=\\"input-field teal\\">
+  <Icon id=\\"text-input-icon-31\\" className=\\"prefix undefined\\" color=\\"grey-text\\" onClick={[undefined]}>
+    visibility
+  </Icon>
+  <input id=\\"text-input-29\\" value=\\"\\" className=\\"grey-text\\" onFocus={[Function: handleFocus]} onBlur={[Function: handleBlur]} />
+  <label id=\\"text-input-label-30\\" htmlFor=\\"text-input-29\\">
+    textinput test
+  </label>
+  <span id=\\"text-input-helper-text-32\\" className=\\"helper-text bold-text\\" data-error=\\"testing error\\" data-success=\\"testing success\\">
+    * This field is mandatory
+  </span>
+</div>"
+`;

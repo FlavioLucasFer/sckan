@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Home screen component should render correctly 1`] = `
+"<div>
+  <h2 className=\\"screen-title grey-text text-darken-3\\">
+    Welcome back, 
+    Flavio
+    !
+  </h2>
+  <section>
+    <h5>
+      What do you want to do?
+    </h5>
+    <div className=\\"row\\">
+      <div className=\\"col s12 m6 xl4\\">
+        <FeatureCard title=\\"Tasks\\" featureIcon=\\"task\\">
+          <CardPanel id=\\"add-task-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"green accent-4\\" tooltip=\\"Add new task\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              add
+            </Icon>
+          </CardPanel>
+          <CardPanel id=\\"tasks-list-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"light-blue\\" tooltip=\\"Tasks list\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              list
+            </Icon>
+          </CardPanel>
+        </FeatureCard>
+      </div>
+      <div className=\\"col s12 m6 xl4\\">
+        <FeatureCard title=\\"Users\\" featureIcon=\\"manage_accounts\\">
+          <CardPanel id=\\"add-user-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"green accent-4\\" tooltip=\\"Add new user\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              add
+            </Icon>
+          </CardPanel>
+          <CardPanel id=\\"users-list-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"light-blue\\" tooltip=\\"Users list\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              list
+            </Icon>
+          </CardPanel>
+        </FeatureCard>
+      </div>
+      <div className=\\"col s12 m6 xl4\\">
+        <FeatureCard title=\\"Companies\\" featureIcon=\\"business\\">
+          <CardPanel id=\\"add-company-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"green accent-4\\" tooltip=\\"Add new company\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              add
+            </Icon>
+          </CardPanel>
+          <CardPanel id=\\"companies-list-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"light-blue\\" tooltip=\\"Companies list\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              list
+            </Icon>
+          </CardPanel>
+        </FeatureCard>
+      </div>
+      <div className=\\"col s12 m6 xl4\\">
+        <FeatureCard title=\\"Sprints\\" featureIcon=\\"wysiwyg\\">
+          <CardPanel id=\\"add-sprint-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"green accent-4\\" tooltip=\\"Add new sprint\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              add
+            </Icon>
+          </CardPanel>
+          <CardPanel id=\\"sprints-list-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"light-blue\\" tooltip=\\"Sprints list\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              list
+            </Icon>
+          </CardPanel>
+        </FeatureCard>
+      </div>
+      <div className=\\"col s12 m6 xl4\\">
+        <FeatureCard title=\\"Projects\\" featureIcon=\\"source\\">
+          <CardPanel id=\\"add-project-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"green accent-4\\" tooltip=\\"Add new project\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              add
+            </Icon>
+          </CardPanel>
+          <CardPanel id=\\"projects-list-card\\" cardClassName=\\"waves-effect waves-light action-card\\" backgroundColor=\\"light-blue\\" tooltip=\\"Projects list\\" onClick={[Function: onClick]}>
+            <Icon className=\\"action-icon\\" size=\\"medium\\" color=\\"white-text\\">
+              list
+            </Icon>
+          </CardPanel>
+        </FeatureCard>
+      </div>
+      <CardPanel id=\\"user-settings-card\\" cardClassName=\\"s12 m2 waves-effect waves-light\\" backgroundColor=\\"grey lighten-4\\" tooltip=\\"Settings\\" onClick={[Function: onClick]}>
+        <Icon type=\\"round\\" size=\\"large\\" color=\\"grey-text text-darken-3\\">
+          settings
+        </Icon>
+      </CardPanel>
+    </div>
+  </section>
+</div>"
+`;

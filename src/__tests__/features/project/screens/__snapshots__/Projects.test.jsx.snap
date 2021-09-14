@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Projects screen component should render correctly 1`] = `"<ListScreen title=\\"Projects\\" singularTitle=\\"Project\\" data={{...}} fields={{...}} identifierField=\\"\\" pagesQuantity={1} formRoute=\\"/projects/form\\" onRefresh={{...}} />"`;

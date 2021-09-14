@@ -1,0 +1,42 @@
+.app-name {
+	font-size: 120px; 
+	font-weight: bold;
+	font-style: italic;
+	margin: 0;
+}
+
+.left-col {
+	display: flex;
+	justify-content: center;
+	padding-top: 100px !important;	
+	height: 100%;
+}
+
+.right-col {
+	height: 100%;
+	padding: 10px !important;
+	padding-top: 100px !important;
+}
+
+.signin-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	font-weight: bold;
+	font-size: large;
+	height: 50px;
+}
+
+@media (max-width: 600px) {
+	.left-col {
+		height: 50%;
+		padding-top: 5px !important;
+	}
+
+	.right-col {
+		height: 50%;
+		padding: 5px !important;
+	}
+};
